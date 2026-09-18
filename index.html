@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deployment Test — AR Welding Instruction</title>
+<meta name="description" content="Pipeline test page for the EID 690 capstone instructional website.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <p class="eyebrow">EID 690 Capstone &middot; Deployment Test</p>
+    <h1>AR Welding Instruction</h1>
+    <p class="lede">Professional development for secondary CTE welding instructors.</p>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <h2>What this page is</h2>
+  <p>This is a pipeline test, not the course shell. It exists to confirm three things before the real build starts:</p>
+  <ol>
+    <li>Files in <code>site/</code> deploy to GitHub Pages and are reachable at a public URL.</li>
+    <li>The accessibility baseline works: skip link, heading order, visible focus, keyboard navigation.</li>
+    <li>Light and dark rendering both hold up, and the layout works at phone width.</li>
+  </ol>
+
+  <h2>Check these yourself</h2>
+  <ul>
+    <li>Press <kbd>Tab</kbd> from the top of the page. The first stop should be a &ldquo;Skip to main content&rdquo; link that becomes visible.</li>
+    <li>Keep tabbing. Every focused element should show a clear outline.</li>
+    <li>Open this on your phone. Nothing should scroll sideways.</li>
+    <li>Switch your system appearance between light and dark. Both should stay readable.</li>
+  </ul>
+
+  <h2>Test controls</h2>
+  <p>The button below writes to browser storage and reads it back — the same mechanism that will track unit completion later.</p>
+  <p>
+    <button type="button" id="progress-btn" class="btn">Mark this page complete</button>
+  </p>
+  <p id="progress-status" role="status" class="status">Not yet marked.</p>
+
+  <h2>Next</h2>
+  <p>Once this is live, this page gets replaced by the Project Milestone 1 course shell: home page with title, header image, and objectives, plus placeholders for the introduction, syllabus, calendar, and four unit pages.</p>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Rajiv Pillay &middot; MS Learning Experience Design and Educational Technology &middot; National University</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var KEY = 'arweld.test.complete';
+  var btn = document.getElementById('progress-btn');
+  var status = document.getElementById('progress-status');
+
+  function read() {
+    try { return localStorage.getItem(KEY) === '1'; }
+    catch (e) { return false; }
+  }
+  function render(saved) {
+    if (saved) {
+      status.textContent = 'Marked complete. Reload the page — it should still say this.';
+      btn.textContent = 'Clear';
+    } else {
+      status.textContent = 'Not yet marked.';
+      btn.textContent = 'Mark this page complete';
+    }
+  }
+  btn.addEventListener('click', function () {
+    var next = !read();
+    try { next ? localStorage.setItem(KEY, '1') : localStorage.removeItem(KEY); }
+    catch (e) { status.textContent = 'Browser storage is blocked here. The page still works.'; return; }
+    render(next);
+  });
+  render(read());
+})();
+</script>
+</body>
+</html>
