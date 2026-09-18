@@ -320,6 +320,16 @@ code {
   max-width: 54ch;
 }
 
+/* Compact hero for interior pages */
+.hero-band--compact { padding-block: 2rem 2.25rem; border-bottom: 3px solid var(--accent); }
+.hero-band--compact h1 { font-size: clamp(1.75rem, 1.3rem + 1.9vw, 2.5rem); }
+.hero-band--compact .lede { font-size: 1.0625rem; }
+
+/* Nav: mark the section a unit page belongs to */
+.nav .dropdown-toggle[data-section-current="true"] { font-weight: 700; }
+.nav .dropdown-toggle[data-section-current="true"]::after { transform: scaleX(1); }
+.dropdown-menu a[aria-current="page"] { font-weight: 700; color: var(--accent); }
+
 /* ---------- Buttons ---------- */
 .btn {
   display: inline-block;
