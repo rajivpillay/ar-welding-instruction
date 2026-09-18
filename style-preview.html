@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Style Preview — AR Welding Instruction</title>
+<meta name="description" content="Design system preview for the EID 690 capstone instructional website: type, color, navigation, and components.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">AR Welding <span>Instruction</span></a>
+    <nav class="nav" aria-label="Main">
+      <ul>
+        <li><a href="#" aria-current="page">Home</a></li>
+        <li><a href="#">Introduction</a></li>
+        <li class="dropdown">
+          <button type="button" class="dropdown-toggle" aria-expanded="false" aria-controls="units-menu">Units</button>
+          <ul class="dropdown-menu" id="units-menu">
+            <li><a href="#">Unit 1 — Placeholder</a></li>
+            <li><a href="#">Unit 2 — Placeholder</a></li>
+            <li><a href="#">Unit 3 — Placeholder</a></li>
+            <li><a href="#">Unit 4 — Placeholder</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Syllabus</a></li>
+        <li><a href="#">Calendar</a></li>
+      </ul>
+    </nav>
+    <button type="button" class="theme-toggle" id="theme-toggle" aria-pressed="false">Dark mode</button>
+  </div>
+</header>
+
+<div class="hero-media">
+  <div class="hero-placeholder">
+    <p><strong>Header image goes here</strong><br>
+    Recommended 2100 &times; 800 or wider, 21:9 crop.<br>
+    Your own welding lab or AR simulator photo.</p>
+  </div>
+</div>
+
+<div class="hero-band">
+  <div class="wrap">
+    <p class="eyebrow">Professional Development &middot; Self-Paced</p>
+    <h1>Integrating Augmented Reality into Welding Instruction</h1>
+    <p class="lede">A four-unit course preparing secondary CTE welding instructors to evaluate AR tools, interpret simulator feedback, and plan the move from simulated practice to live welding.</p>
+  </div>
+</div>
+
+<main id="main">
+  <div class="wrap section">
+
+    <div class="note">
+      <h2>What this page is</h2>
+      <p>A style preview, not a course page. Every element below is a component the real site will use. Nothing here is final content — the headings, unit titles, and copy are stand-ins so you can judge the system, not the words.</p>
+    </div>
+
+    <h2>Navigation</h2>
+    <p>Hover a menu item and the underline sweeps in from the left. Now press <code>Tab</code> and do it with the keyboard — the same animation fires on focus, which the reference template does not do. The Units menu opens on hover, on click, and on <kbd>Enter</kbd>, and closes with <kbd>Escape</kbd>.</p>
+    <p>The current page keeps a persistent underline and carries <code>aria-current="page"</code>, so a screen reader announces it as the current page rather than relying on the visual cue alone.</p>
+
+    <h2>Type scale</h2>
+    <p>Poppins for headings and navigation, Manrope for body text. Headings scale fluidly with the viewport, so nothing is cramped on a phone or oversized on a wide monitor.</p>
+
+    <h3>This is a heading level three</h3>
+    <p>This is body copy at the size instructors will actually read. The measure is capped at 68 characters, which keeps lines short enough to track comfortably across a paragraph. Long instructional text is the main thing this site does, so the body face was chosen for sustained reading rather than for display impact.</p>
+    <h4>Label / eyebrow style</h4>
+    <p>Used for section labels, unit numbers, and metadata.</p>
+
+    <h2>Color</h2>
+    <p>Every pair below was checked against the WCAG 2.2 contrast formula. The ratios are measured, not estimated.</p>
+
+    <ul class="swatches">
+      <li class="swatch"><div class="chip" style="background:#0f2a44"></div><div class="label"><b>Navy</b><span>#0F2A44 &middot; 14.63:1</span></div></li>
+      <li class="swatch"><div class="chip" style="background:#14507f"></div><div class="label"><b>Accent</b><span>#14507F &middot; 8.46:1</span></div></li>
+      <li class="swatch"><div class="chip" style="background:#1a1d21"></div><div class="label"><b>Body text</b><span>#1A1D21 &middot; 16.91:1</span></div></li>
+      <li class="swatch"><div class="chip" style="background:#4a5460"></div><div class="label"><b>Muted</b><span>#4A5460 &middot; 7.70:1</span></div></li>
+      <li class="swatch"><div class="chip" style="background:#b8420f"></div><div class="label"><b>Focus ring</b><span>#B8420F &middot; 5.49:1</span></div></li>
+      <li class="swatch"><div class="chip" style="background:#f2f5f8;border-bottom:1px solid #c9d3dd"></div><div class="label"><b>Surface</b><span>#F2F5F8</span></div></li>
+    </ul>
+
+    <table>
+      <caption>Light mode contrast, WCAG 2.2</caption>
+      <thead>
+        <tr><th scope="col">Pair</th><th scope="col">Ratio</th><th scope="col">Result</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Body text on white</td><td>16.91:1</td><td>AAA</td></tr>
+        <tr><td>Heading navy on white</td><td>14.63:1</td><td>AAA</td></tr>
+        <tr><td>Link / button on white</td><td>8.46:1</td><td>AAA</td></tr>
+        <tr><td>Muted text on white</td><td>7.70:1</td><td>AAA</td></tr>
+        <tr><td>Focus ring on white</td><td>5.49:1</td><td>AA</td></tr>
+      </tbody>
+    </table>
+
+    <p>The focus ring is deliberately a warm rust rather than blue. If it matched the accent, a keyboard user could not tell &ldquo;this is a link&rdquo; from &ldquo;this is where I am.&rdquo; Switch to dark mode with the button in the header — the whole palette swaps and every pair still clears AA.</p>
+
+    <h2>Buttons</h2>
+    <div class="btn-row">
+      <a class="btn" href="#main">Start Unit 1</a>
+      <a class="btn btn--ghost" href="#main">Download the planning template</a>
+    </div>
+    <p>Minimum 44&nbsp;pixels tall, which is the touch target size that keeps them usable on a phone and reachable for anyone with limited fine motor control.</p>
+
+    <h2>Unit cards</h2>
+    <p>The four-unit grid, echoing the card sections from your EID600 toolkit. It reflows to one column on a phone with no horizontal scrolling. The whole card is clickable, but the link sits on the heading so screen readers announce something meaningful rather than &ldquo;link, card.&rdquo;</p>
+
+    <ul class="card-grid">
+      <li class="card">
+        <span class="unit-no">Unit 1</span>
+        <h3><a href="#main">Placeholder title</a></h3>
+        <p>One or two lines describing what the instructor will be able to do after this unit.</p>
+        <p class="meta"><span class="pill pill--done">Complete</span></p>
+      </li>
+      <li class="card">
+        <span class="unit-no">Unit 2</span>
+        <h3><a href="#main">Placeholder title</a></h3>
+        <p>One or two lines describing what the instructor will be able to do after this unit.</p>
+        <p class="meta"><span class="pill">Not started</span></p>
+      </li>
+      <li class="card">
+        <span class="unit-no">Unit 3</span>
+        <h3><a href="#main">Placeholder title</a></h3>
+        <p>One or two lines describing what the instructor will be able to do after this unit.</p>
+        <p class="meta"><span class="pill">Not started</span></p>
+      </li>
+      <li class="card">
+        <span class="unit-no">Unit 4</span>
+        <h3><a href="#main">Placeholder title</a></h3>
+        <p>One or two lines describing what the instructor will be able to do after this unit.</p>
+        <p class="meta"><span class="pill">Not started</span></p>
+      </li>
+    </ul>
+
+    <h2>Motion</h2>
+    <p>All animation respects <code>prefers-reduced-motion</code>. If a viewer has asked their operating system to reduce motion, transitions and hover lifts stop and the interface still works exactly the same. On macOS that setting is System Settings &rarr; Accessibility &rarr; Display &rarr; Reduce motion.</p>
+
+    <h2>Decisions still open</h2>
+    <ul>
+      <li>Header image — the band above is sized and waiting.</li>
+      <li>Four unit titles, which fill the dropdown and the cards.</li>
+      <li>Your draft objectives, which sit on the home page below the hero.</li>
+    </ul>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p><strong>AR Welding Instruction</strong> — style preview</p>
+    <p>Rajiv Pillay &middot; MS Learning Experience Design and Educational Technology &middot; National University</p>
+    <p>EID 690 Capstone &middot; Project Milestone 1</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  /* Units dropdown: pointer + keyboard, Escape to close, click-outside to close */
+  var toggle = document.querySelector('.dropdown-toggle');
+  var menu = document.getElementById('units-menu');
+  var parent = toggle && toggle.closest('.dropdown');
+
+  function open()  { menu.classList.add('is-open');    toggle.setAttribute('aria-expanded', 'true');  }
+  function close() { menu.classList.remove('is-open'); toggle.setAttribute('aria-expanded', 'false'); }
+
+  if (toggle && menu && parent) {
+    toggle.addEventListener('click', function () {
+      menu.classList.contains('is-open') ? close() : open();
+    });
+    parent.addEventListener('mouseenter', function () {
+      if (window.matchMedia('(min-width: 46rem)').matches) open();
+    });
+    parent.addEventListener('mouseleave', function () {
+      if (window.matchMedia('(min-width: 46rem)').matches) close();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && menu.classList.contains('is-open')) { close(); toggle.focus(); }
+    });
+    document.addEventListener('click', function (e) {
+      if (!parent.contains(e.target)) close();
+    });
+    parent.addEventListener('focusout', function (e) {
+      if (!parent.contains(e.relatedTarget)) close();
+    });
+  }
+
+  /* Theme toggle: follows the system by default, remembers an explicit choice */
+  var btn = document.getElementById('theme-toggle');
+  var root = document.documentElement;
+  var KEY = 'arweld.theme';
+
+  function systemDark() {
+    return window.matchMedia('(prefers-color-scheme: dark)').matches;
+  }
+  function stored() {
+    try { return localStorage.getItem(KEY); } catch (e) { return null; }
+  }
+  function isDark() {
+    var s = stored();
+    return s ? s === 'dark' : systemDark();
+  }
+  function apply(dark) {
+    root.setAttribute('data-theme', dark ? 'dark' : 'light');
+    btn.textContent = dark ? 'Light mode' : 'Dark mode';
+    btn.setAttribute('aria-pressed', dark ? 'true' : 'false');
+  }
+  if (btn) {
+    apply(isDark());
+    btn.addEventListener('click', function () {
+      var next = !(root.getAttribute('data-theme') === 'dark');
+      try { localStorage.setItem(KEY, next ? 'dark' : 'light'); } catch (e) {}
+      apply(next);
+    });
+  }
+})();
+</script>
+</body>
+</html>
