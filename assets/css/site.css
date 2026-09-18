@@ -7,22 +7,23 @@
 
 /* ---------- Tokens ---------- */
 :root {
-  /* Light (default) */
+  /* Light (default) — black text on white; color reserved for chrome and controls */
   --bg:            #ffffff;
-  --surface:       #f2f5f8;
-  --surface-2:     #e6ecf2;
-  --text:          #1a1d21;   /* 16.91:1 on --bg */
-  --muted:         #4a5460;   /*  7.70:1 on --bg */
-  --heading:       #0f2a44;   /* 14.63:1 on --bg */
+  --surface:       #f7f7f7;
+  --surface-2:     #ededed;
+  --text:          #111111;   /* 18.88:1 on --bg */
+  --muted:         #555555;   /*  7.46:1 on --bg */
+  --heading:       #111111;   /* 18.88:1 on --bg */
   --accent:        #14507f;   /*  8.46:1 on --bg */
   --accent-hover:  #0f3e63;
   --on-accent:     #ffffff;   /*  8.46:1 on --accent */
-  --navy:          #0f2a44;
+  --navy:          #0f2a44;   /* chrome only: header bar */
   --on-navy:       #ffffff;   /* 14.63:1 on --navy */
   --on-navy-muted: #c9d9e8;   /* 10.16:1 on --navy */
-  --border:        #c9d3dd;
+  --border:        #d4d4d4;   /* decorative separators */
+  --border-strong: #949494;   /*  3.03:1 — control boundaries */
   --focus:         #b8420f;   /*  5.49:1 on --bg */
-  --shadow:        0 1px 2px rgba(15, 42, 68, .06), 0 8px 24px rgba(15, 42, 68, .08);
+  --shadow:        0 1px 2px rgba(0, 0, 0, .06), 0 8px 24px rgba(0, 0, 0, .10);
 
   /* Type */
   --font-display: "Poppins", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -41,40 +42,42 @@
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg:            #12171c;
-    --surface:       #1b2229;
-    --surface-2:     #232b33;
-    --text:          #e8eaed;   /* 14.95:1 */
-    --muted:         #aeb8c4;   /*  8.97:1 */
-    --heading:       #dce7f2;
-    --accent:        #7fb3dc;   /*  8.05:1 */
+    --bg:            #121212;
+    --surface:       #1c1c1c;
+    --surface-2:     #262626;
+    --text:          #e6e6e6;   /* 15.01:1 */
+    --muted:         #a8a8a8;   /*  7.88:1 */
+    --heading:       #f2f2f2;
+    --accent:        #7fb3dc;   /*  8.37:1 */
     --accent-hover:  #a3c9e8;
-    --on-accent:     #12171c;   /*  8.05:1 */
-    --navy:          #1b2229;
-    --on-navy:       #e8eaed;
-    --on-navy-muted: #aeb8c4;
-    --border:        #39434e;
-    --focus:         #ff9a62;   /*  8.63:1 */
-    --shadow:        0 1px 2px rgba(0, 0, 0, .4), 0 8px 24px rgba(0, 0, 0, .45);
+    --on-accent:     #121212;   /*  8.37:1 */
+    --navy:          #1c1c1c;
+    --on-navy:       #e6e6e6;
+    --on-navy-muted: #a8a8a8;
+    --border:        #3a3a3a;
+    --border-strong: #6a6a6a;
+    --focus:         #ff9a62;   /*  8.97:1 */
+    --shadow:        0 1px 2px rgba(0, 0, 0, .5), 0 8px 24px rgba(0, 0, 0, .55);
   }
 }
 
 :root[data-theme="dark"] {
-  --bg:            #12171c;
-  --surface:       #1b2229;
-  --surface-2:     #232b33;
-  --text:          #e8eaed;
-  --muted:         #aeb8c4;
-  --heading:       #dce7f2;
-  --accent:        #7fb3dc;
+    --bg:            #121212;
+  --surface:       #1c1c1c;
+  --surface-2:     #262626;
+  --text:          #e6e6e6;   /* 15.01:1 */
+  --muted:         #a8a8a8;   /*  7.88:1 */
+  --heading:       #f2f2f2;
+  --accent:        #7fb3dc;   /*  8.37:1 */
   --accent-hover:  #a3c9e8;
-  --on-accent:     #12171c;
-  --navy:          #1b2229;
-  --on-navy:       #e8eaed;
-  --on-navy-muted: #aeb8c4;
-  --border:        #39434e;
-  --focus:         #ff9a62;
-  --shadow:        0 1px 2px rgba(0, 0, 0, .4), 0 8px 24px rgba(0, 0, 0, .45);
+  --on-accent:     #121212;   /*  8.37:1 */
+  --navy:          #1c1c1c;
+  --on-navy:       #e6e6e6;
+  --on-navy-muted: #a8a8a8;
+  --border:        #3a3a3a;
+  --border-strong: #6a6a6a;
+  --focus:         #ff9a62;   /*  8.97:1 */
+  --shadow:        0 1px 2px rgba(0, 0, 0, .5), 0 8px 24px rgba(0, 0, 0, .55);
 }
 
 /* ---------- Base ---------- */
@@ -356,7 +359,7 @@ code {
 .card {
   position: relative;
   background: var(--bg);
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-strong);
   border-radius: var(--radius);
   padding: 1.5rem;
   display: flex;
@@ -415,7 +418,7 @@ th { font-family: var(--font-display); font-size: .8125rem; text-transform: uppe
   font-weight: 600;
   color: var(--on-navy);
   background: transparent;
-  border: 1px solid rgba(255, 255, 255, .3);
+  border: 1px solid var(--on-navy-muted);
   border-radius: var(--radius);
   padding: .45rem .8rem;
   min-height: 34px;
@@ -426,7 +429,7 @@ th { font-family: var(--font-display); font-size: .8125rem; text-transform: uppe
 
 /* ---------- Footer ---------- */
 .site-footer {
-  background: var(--surface);
+  background: var(--bg);
   border-top: 1px solid var(--border);
   color: var(--muted);
   font-size: .875rem;
@@ -438,7 +441,10 @@ th { font-family: var(--font-display); font-size: .8125rem; text-transform: uppe
 /* ---------- Notes callout ---------- */
 .note {
   border-left: 3px solid var(--accent);
-  background: var(--surface);
+  border-top: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
   padding: 1rem 1.25rem;
   border-radius: 0 var(--radius) var(--radius) 0;
   margin-bottom: 1.5rem;

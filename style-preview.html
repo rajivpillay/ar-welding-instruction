@@ -74,15 +74,16 @@
     <p>Used for section labels, unit numbers, and metadata.</p>
 
     <h2>Color</h2>
-    <p>Every pair below was checked against the WCAG 2.2 contrast formula. The ratios are measured, not estimated.</p>
+    <p>Near-black text on white. Color is reserved for two jobs only: the header bar, and controls a reader can act on &mdash; links, buttons, and the focus ring. Nothing in the reading area is tinted.</p>
+    <p>Body text is <code>#111111</code> rather than pure black. At 18.88:1 it still clears AAA and reads as black, while avoiding the halation some readers with astigmatism or dyslexia experience against a pure-black-on-pure-white field.</p>
 
     <ul class="swatches">
-      <li class="swatch"><div class="chip" style="background:#0f2a44"></div><div class="label"><b>Navy</b><span>#0F2A44 &middot; 14.63:1</span></div></li>
-      <li class="swatch"><div class="chip" style="background:#14507f"></div><div class="label"><b>Accent</b><span>#14507F &middot; 8.46:1</span></div></li>
-      <li class="swatch"><div class="chip" style="background:#1a1d21"></div><div class="label"><b>Body text</b><span>#1A1D21 &middot; 16.91:1</span></div></li>
-      <li class="swatch"><div class="chip" style="background:#4a5460"></div><div class="label"><b>Muted</b><span>#4A5460 &middot; 7.70:1</span></div></li>
+      <li class="swatch"><div class="chip" style="background:#111111"></div><div class="label"><b>Text &amp; headings</b><span>#111111 &middot; 18.88:1</span></div></li>
+      <li class="swatch"><div class="chip" style="background:#555555"></div><div class="label"><b>Muted</b><span>#555555 &middot; 7.46:1</span></div></li>
+      <li class="swatch"><div class="chip" style="background:#14507f"></div><div class="label"><b>Link / button</b><span>#14507F &middot; 8.46:1</span></div></li>
+      <li class="swatch"><div class="chip" style="background:#0f2a44"></div><div class="label"><b>Header bar</b><span>#0F2A44 &middot; 14.63:1</span></div></li>
       <li class="swatch"><div class="chip" style="background:#b8420f"></div><div class="label"><b>Focus ring</b><span>#B8420F &middot; 5.49:1</span></div></li>
-      <li class="swatch"><div class="chip" style="background:#f2f5f8;border-bottom:1px solid #c9d3dd"></div><div class="label"><b>Surface</b><span>#F2F5F8</span></div></li>
+      <li class="swatch"><div class="chip" style="background:#ffffff;border-bottom:1px solid #949494"></div><div class="label"><b>Page background</b><span>#FFFFFF</span></div></li>
     </ul>
 
     <table>
@@ -91,15 +92,16 @@
         <tr><th scope="col">Pair</th><th scope="col">Ratio</th><th scope="col">Result</th></tr>
       </thead>
       <tbody>
-        <tr><td>Body text on white</td><td>16.91:1</td><td>AAA</td></tr>
-        <tr><td>Heading navy on white</td><td>14.63:1</td><td>AAA</td></tr>
+        <tr><td>Body text and headings on white</td><td>18.88:1</td><td>AAA</td></tr>
         <tr><td>Link / button on white</td><td>8.46:1</td><td>AAA</td></tr>
-        <tr><td>Muted text on white</td><td>7.70:1</td><td>AAA</td></tr>
+        <tr><td>Muted text on white</td><td>7.46:1</td><td>AAA</td></tr>
+        <tr><td>White on navy header bar</td><td>14.63:1</td><td>AAA</td></tr>
+        <tr><td>Control borders on white</td><td>3.03:1</td><td>AA (non-text)</td></tr>
         <tr><td>Focus ring on white</td><td>5.49:1</td><td>AA</td></tr>
       </tbody>
     </table>
 
-    <p>The focus ring is deliberately a warm rust rather than blue. If it matched the accent, a keyboard user could not tell &ldquo;this is a link&rdquo; from &ldquo;this is where I am.&rdquo; Switch to dark mode with the button in the header — the whole palette swaps and every pair still clears AA.</p>
+    <p>The focus ring is deliberately a warm rust rather than blue. If it matched the link color, a keyboard user could not tell &ldquo;this is a link&rdquo; from &ldquo;this is where I am.&rdquo; Switch to dark mode with the button in the header &mdash; the greys are neutral there too, and every pair still clears AA.</p>
 
     <h2>Buttons</h2>
     <div class="btn-row">
