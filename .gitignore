@@ -1,1 +1,5 @@
 .DS_Store
+
+# Pinegrow working files
+_pgbackup/
+pinegrow.json
