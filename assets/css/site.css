@@ -362,6 +362,15 @@ code {
   border-color: var(--accent);
 }
 .btn--ghost:hover { background: var(--accent); color: var(--on-accent); }
+.btn--sm {
+  font-size: .8125rem;
+  padding: .5rem 1rem;
+  min-height: 34px;
+  font-weight: 600;
+}
+
+.site-footer .btn--sm { margin-top: .6rem; }
+
 .btn-row { display: flex; flex-wrap: wrap; gap: .75rem; margin-bottom: 1.5rem; }
 
 /* ---------- Unit cards ---------- */
