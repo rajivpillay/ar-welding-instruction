@@ -414,6 +414,8 @@ code {
   color: var(--muted);
   background: var(--surface);
 }
+.pill-row { margin-bottom: 1.25rem; }
+
 .pill--done { border-color: var(--accent); color: var(--accent); }
 
 /* ---------- Swatches + tables ---------- */
