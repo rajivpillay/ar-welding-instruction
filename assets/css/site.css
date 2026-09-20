@@ -288,12 +288,12 @@ code {
 /* ---------- Hero (Option A: photo band, title in navy block below) ---------- */
 .hero-media {
   width: 100%;
-  aspect-ratio: 8 / 3;
+  aspect-ratio: 7 / 2;
   background: var(--surface-2);
   border-bottom: 3px solid var(--accent);
   overflow: hidden;
 }
-.hero-media img { width: 100%; height: 100%; object-fit: cover; }
+.hero-media img { width: 100%; height: 100%; object-fit: cover; object-position: center 15%; }
 
 .hero-placeholder {
   height: 100%;
