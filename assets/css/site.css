@@ -288,7 +288,7 @@ code {
 /* ---------- Hero (Option A: photo band, title in navy block below) ---------- */
 .hero-media {
   width: 100%;
-  aspect-ratio: 21 / 8;
+  aspect-ratio: 8 / 3;
   background: var(--surface-2);
   border-bottom: 3px solid var(--accent);
   overflow: hidden;
