@@ -207,9 +207,11 @@ code {
   transition: color var(--t-fast) var(--ease);
 }
 
-/* Underline sweeps in from the left — on hover AND keyboard focus */
+/* Underline sweeps in from the left — on hover AND keyboard focus.
+   Links use ::after; the dropdown toggle uses ::before so its ::after
+   is free to carry the chevron inline, after the label. */
 .nav a::after,
-.nav .dropdown-toggle::after {
+.nav .dropdown-toggle::before {
   content: "";
   position: absolute;
   left: .85rem;
@@ -223,26 +225,32 @@ code {
 }
 .nav a:hover::after,
 .nav a:focus-visible::after,
-.nav .dropdown-toggle:hover::after,
-.nav .dropdown-toggle:focus-visible::after,
-.nav li:hover > a::after { transform: scaleX(1); }
+.nav li:hover > a::after,
+.nav .dropdown-toggle:hover::before,
+.nav .dropdown-toggle:focus-visible::before,
+.nav .dropdown:hover > .dropdown-toggle::before { transform: scaleX(1); }
 
 .nav a[aria-current="page"] { font-weight: 700; }
 .nav a[aria-current="page"]::after { transform: scaleX(1); }
 
 /* Dropdown */
 .dropdown { position: relative; }
-.dropdown-toggle::before {
+
+/* Chevron, inline after the label */
+.dropdown-toggle::after {
   content: "";
+  position: static;
   display: inline-block;
-  width: .4em; height: .4em;
-  margin-left: .5em;
+  width: .38em;
+  height: .38em;
+  margin-left: .85em;
+  vertical-align: .12em;
   border-right: 2px solid currentColor;
   border-bottom: 2px solid currentColor;
-  transform: translateY(-2px) rotate(45deg);
+  transform: translateY(-.12em) rotate(45deg);
   transition: transform var(--t-fast) var(--ease);
 }
-.dropdown-toggle[aria-expanded="true"]::before { transform: translateY(1px) rotate(-135deg); }
+.dropdown-toggle[aria-expanded="true"]::after { transform: translateY(.1em) rotate(-135deg); }
 
 .dropdown-menu {
   position: absolute;
@@ -327,7 +335,7 @@ code {
 
 /* Nav: mark the section a unit page belongs to */
 .nav .dropdown-toggle[data-section-current="true"] { font-weight: 700; }
-.nav .dropdown-toggle[data-section-current="true"]::after { transform: scaleX(1); }
+.nav .dropdown-toggle[data-section-current="true"]::before { transform: scaleX(1); }
 .dropdown-menu a[aria-current="page"] { font-weight: 700; color: var(--accent); }
 
 /* ---------- Buttons ---------- */
