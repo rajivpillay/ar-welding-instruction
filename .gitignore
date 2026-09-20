@@ -3,3 +3,5 @@
 # Pinegrow working files
 _pgbackup/
 pinegrow.json
+_pginfo/
+images/*.png
