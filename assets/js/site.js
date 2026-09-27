@@ -29,6 +29,53 @@
     });
   }
 
+
+  /* ---- Unit sidebar: mobile disclosure ---- */
+  var unitToggle = document.getElementById('unit-nav-toggle');
+  var unitParts  = document.getElementById('unit-parts');
+  if (unitToggle && unitParts) {
+    unitToggle.addEventListener('click', function () {
+      var open = unitParts.classList.toggle('is-open');
+      unitToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
+
+  /* ---- Per-part completion, stored per browser ---- */
+  var PKEY = 'simtosteel.progress';
+
+  function readProgress() {
+    try { return JSON.parse(localStorage.getItem(PKEY) || '{}'); }
+    catch (e) { return {}; }
+  }
+  function writeProgress(obj) {
+    try { localStorage.setItem(PKEY, JSON.stringify(obj)); } catch (e) {}
+  }
+  function paintProgress() {
+    var done = readProgress();
+    var marks = document.querySelectorAll('[data-done-for]');
+    for (var i = 0; i < marks.length; i++) {
+      var key = marks[i].getAttribute('data-done-for');
+      marks[i].hidden = !done[key];
+    }
+    var btn = document.querySelector('[data-mark-complete]');
+    if (btn) {
+      var k = btn.getAttribute('data-mark-complete');
+      btn.textContent = done[k] ? 'Completed \u2014 undo' : 'Mark complete';
+      btn.setAttribute('aria-pressed', done[k] ? 'true' : 'false');
+    }
+  }
+  var markBtn = document.querySelector('[data-mark-complete]');
+  if (markBtn) {
+    markBtn.addEventListener('click', function () {
+      var k = markBtn.getAttribute('data-mark-complete');
+      var done = readProgress();
+      if (done[k]) { delete done[k]; } else { done[k] = true; }
+      writeProgress(done);
+      paintProgress();
+    });
+  }
+  if (document.querySelector('[data-done-for]')) { paintProgress(); }
+
   /* ---- Theme toggle: follows the system, remembers an explicit choice ---- */
   var btn = document.getElementById('theme-toggle');
   var root = document.documentElement;
