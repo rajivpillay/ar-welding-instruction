@@ -551,6 +551,16 @@ details.transcript summary {
 }
 details.transcript summary:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
 details.transcript > *:not(summary) { margin-top: .5rem; }
+details.transcript p, details.transcript li { max-width: var(--measure); }
+.transcript-note { font-size: .875rem; color: var(--muted); }
+details.transcript .ts {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: .8125rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+  margin-right: .45rem;
+}
 
 /* ---------- Unit layout: sidebar + content ---------- */
 .unit-layout {
