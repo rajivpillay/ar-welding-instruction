@@ -147,46 +147,133 @@
       status.textContent = 'Cleared.';
     });
   });
-  /* ---- Quizzes (Pre-Quiz now; Knowledge Check later) ----
-     The first attempt is saved in this browser: it is the score the study uses.
-     Score-only mode shows the total and nothing else, so answers stay unseen.
-     A facilitator can clear a saved score by opening the page with ?reset   */
+  /* ---- Quizzes: Pre-Quiz (score-only) and Knowledge Check (feedback) ----
+     Question types, set on each top-level fieldset with data-type:
+       single (default) - one radio; options may carry data-feedback
+       multi            - checkboxes; data-answer="b,d", data-choose="2"
+       sort             - .sort-row[data-answer] rows, all must be right
+     The first attempt is saved in this browser; it is the score the study
+     uses. A facilitator can clear saved scores by adding ?reset to the URL. */
   var SKEY = 'simtosteel.scores';
   function readScores() { try { return JSON.parse(localStorage.getItem(SKEY) || '{}'); } catch (e) { return {}; } }
   function writeScores(o) { try { localStorage.setItem(SKEY, JSON.stringify(o)); } catch (e) {} }
+  function esc(s) { var d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+
+  function qType(fs) { return fs.getAttribute('data-type') || 'single'; }
+  function answered(fs) {
+    var t = qType(fs);
+    if (t === 'multi') return $all('input:checked', fs).length === +(fs.getAttribute('data-choose') || 1);
+    if (t === 'sort') return $all('.sort-row', fs).every(function (r) { return r.querySelector('input:checked'); });
+    return !!fs.querySelector('input:checked');
+  }
+  function correct(fs) {
+    var t = qType(fs);
+    if (t === 'multi') {
+      var picked = $all('input:checked', fs).map(function (i) { return i.value; }).sort().join(',');
+      return picked === fs.getAttribute('data-answer').split(',').sort().join(',');
+    }
+    if (t === 'sort') return $all('.sort-row', fs).every(function (r) {
+      return r.querySelector('input:checked').value === r.getAttribute('data-answer');
+    });
+    return fs.querySelector('input:checked').value === fs.getAttribute('data-answer');
+  }
+  function showFeedback(fs, ok) {
+    var fb = fs.querySelector(':scope > .fb'); if (!fb) return;
+    var t = qType(fs), text = fs.getAttribute('data-explain') || '';
+    if (t === 'single') { var c = fs.querySelector('input:checked'); text = c.getAttribute('data-feedback') || text; }
+    if (t === 'sort') $all('.sort-row', fs).forEach(function (r) {
+      var rok = r.querySelector('input:checked').value === r.getAttribute('data-answer');
+      var rf = r.querySelector('.row-fb'); rf.className = 'row-fb ' + (rok ? 'is-ok' : 'is-bad');
+      rf.innerHTML = '<span class="mark" aria-hidden="true">' + (rok ? '✓' : '✗') + '</span> <span class="mark">' + (rok ? 'Correct' : 'Not quite') + '</span>';
+    });
+    fb.className = 'fb ' + (ok ? 'is-ok' : 'is-bad');
+    fb.innerHTML = mark(ok) + text;
+  }
+  function clearFeedback(fs) {
+    $all('.fb, .row-fb', fs).forEach(function (f) { f.className = f.classList.contains('row-fb') ? 'row-fb' : 'fb'; f.innerHTML = ''; });
+  }
 
   $all('form[data-quiz]').forEach(function (form) {
     var id = form.getAttribute('data-quiz');
-    var items = $all('fieldset[data-answer]', form);
-    var result = form.querySelector('.result');
+    var mode = form.getAttribute('data-mode') || 'score-only';
+    var items = $all(':scope > fieldset', form);
+    var result = form.querySelector('.quiz-result, .result');
     var submit = form.querySelector('[type="submit"]');
+    var pass = +(form.getAttribute('data-pass') || 0);
+    var mirror = +(form.getAttribute('data-mirror') || 0);
 
-    if (/[?&]reset\b/.test(location.search)) {
-      var sc = readScores(); delete sc[id]; writeScores(sc);
-    }
-    function lock(rec) {
-      items.forEach(function (fs) { fs.disabled = true; });
-      if (submit) submit.hidden = true;
-      result.textContent = 'You got ' + rec.score + ' of ' + rec.total + '. This isn\u2019t graded. ' +
+    if (/[?&]reset\b/.test(location.search)) { var sc = readScores(); delete sc[id]; writeScores(sc); }
+
+    function setLocked(on) { items.forEach(function (fs) { fs.disabled = on; }); if (submit) submit.hidden = on; }
+
+    function scoreOnlyMessage(rec) {
+      result.textContent = 'You got ' + rec.score + ' of ' + rec.total + '. This isn’t graded. ' +
         'Your score is saved in this browser, and the Knowledge Check will show you what changed.';
     }
+
+    function feedbackMessage(score, mirrorScore, first) {
+      var html = '<p class="result-score"><strong>You got ' + score + ' of ' + items.length + '.</strong></p>';
+      var pre = readScores()[form.getAttribute('data-pre')];
+      if (mirror && pre) {
+        html += '<p>Questions 1 to ' + mirror + ' match the Pre-Quiz. Pre-Quiz: ' + pre.score + ' of ' + pre.total +
+                '. This time: ' + mirrorScore + ' of ' + mirror + '.</p>';
+      }
+      if (first && first.attempt !== 1) html += '<p class="save-status">Your first attempt (' + first.score + ' of ' + first.total + ') is the one saved.</p>';
+      var next = form.getAttribute('data-next'), nextName = form.getAttribute('data-next-name') || 'the next part';
+      if (score >= pass) {
+        html += '<p>You’re ready for ' + nextName + '.</p><p><a class="btn" href="' + next + '">Go to ' + nextName + '</a></p>';
+      } else {
+        var seen = {}, missed = [];
+        items.forEach(function (fs) {
+          if (fs.getAttribute('data-ok') === '1') return;
+          var h = fs.getAttribute('data-topic-href'); if (!h || seen[h]) return; seen[h] = 1;
+          missed.push({ n: +(fs.getAttribute('data-topic') || 0), html: '<li><a href="' + h + '">' + fs.getAttribute('data-topic-name') + '</a></li>' });
+        });
+        var links = missed.sort(function (a, b) { return a.n - b.n; }).map(function (m) { return m.html; });
+        html += '<p>' + pass + ' or more means you’re ready for ' + nextName + '. Review these topics, then try again, or continue to the task.</p>' +
+                '<ul>' + links.join('') + '</ul>' +
+                '<div class="btn-row"><button type="button" class="btn btn--sm" data-retake>Try again</button>' +
+                '<a class="btn btn--ghost btn--sm" href="' + next + '">Continue to ' + nextName + ' anyway</a></div>';
+      }
+      if (score >= pass) html += '<div class="btn-row"><button type="button" class="btn btn--ghost btn--sm" data-retake>Try again</button></div>';
+      result.innerHTML = html;
+      var rt = result.querySelector('[data-retake]');
+      if (rt) rt.addEventListener('click', function () {
+        items.forEach(function (fs) { $all('input', fs).forEach(function (i) { i.checked = false; }); clearFeedback(fs); fs.removeAttribute('data-ok'); });
+        setLocked(false); result.innerHTML = '';
+        var firstInput = form.querySelector('input'); if (firstInput) firstInput.focus();
+      });
+    }
+
     var prior = readScores()[id];
-    if (prior) lock(prior);
+    if (prior && mode === 'score-only') { setLocked(true); scoreOnlyMessage(prior); }
+    if (prior && mode === 'feedback') {
+      result.innerHTML = '<p class="save-status">Your first attempt is saved: ' + prior.score + ' of ' + prior.total + '. You can try again below.</p>';
+    }
 
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      var missing = items.filter(function (fs) { return !fs.querySelector('input:checked'); });
+      var missing = items.filter(function (fs) { return !answered(fs); });
       if (missing.length) {
-        result.textContent = 'Answer all ' + items.length + ' questions first. ' + missing.length + ' still open.';
-        var first = missing[0].querySelector('input'); if (first) first.focus();
+        var msg = 'Answer all ' + items.length + ' questions first. ' + missing.length + ' still open.';
+        if (mode === 'feedback') result.innerHTML = '<p>' + esc(msg) + '</p>'; else result.textContent = msg;
+        var fi = missing[0].querySelector('input'); if (fi) fi.focus();
         return;
       }
-      var score = items.filter(function (fs) {
-        return fs.querySelector('input:checked').value === fs.getAttribute('data-answer');
-      }).length;
-      var rec = { score: score, total: items.length, date: new Date().toISOString().slice(0, 10) };
-      var all = readScores(); if (!all[id]) { all[id] = rec; writeScores(all); }
-      lock(all[id]);
+      var score = 0, mirrorScore = 0;
+      items.forEach(function (fs, i) {
+        var ok = correct(fs); fs.setAttribute('data-ok', ok ? '1' : '0');
+        if (ok) { score++; if (i < mirror) mirrorScore++; }
+        if (mode === 'feedback') showFeedback(fs, ok);
+      });
+      var all = readScores(), first = all[id];
+      if (!first) {
+        first = { score: score, total: items.length, date: new Date().toISOString().slice(0, 10), attempt: 1 };
+        if (mirror) first.mirror = mirrorScore;
+        all[id] = first; writeScores(all);
+      } else { first = Object.assign({}, first, { attempt: 2 }); }
+      setLocked(true);
+      if (mode === 'score-only') scoreOnlyMessage(all[id]); else feedbackMessage(score, mirrorScore, first.attempt === 1 ? null : first);
       result.setAttribute('tabindex', '-1'); result.focus();
     });
   });

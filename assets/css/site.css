@@ -902,3 +902,16 @@ ol.steps li::before {
 .eval-item:last-of-type { border-bottom: 0; }
 .eval-q { margin: 0; font-weight: 500; max-width: var(--measure); }
 .eval-area .field { margin-top: .75rem; }
+
+/* Quizzes */
+form.quiz fieldset[disabled] .options label { cursor: default; }
+.sort-row { padding: .5rem 0 .6rem; border-bottom: 1px solid var(--border); }
+.sort-row:last-of-type { border-bottom: 0; }
+.row-fb { margin: .35rem 0 0; font-size: .875rem; }
+.row-fb:empty { display: none; }
+.row-fb.is-ok .mark { color: var(--ok); font-weight: 700; }
+.row-fb.is-bad .mark { color: var(--bad); font-weight: 700; }
+.quiz-result { margin-top: 1rem; }
+.quiz-result:not(:empty) { border: 1px solid var(--border-strong); border-left: 5px solid var(--accent); border-radius: var(--radius); padding: 1rem 1.25rem; }
+.quiz-result .result-score { font-size: 1.125rem; margin-top: 0; }
+.mcq .shot { margin: .5rem 0 .75rem; }
