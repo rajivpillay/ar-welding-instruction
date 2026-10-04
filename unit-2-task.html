@@ -98,7 +98,52 @@
         </ul>
 
         <h2>Your work</h2>
-        <p><strong>Placeholder.</strong> The fillable form will go here. Your answers save in this browser, and you can download a copy.</p>
+        <p>Use the sample report below, or a report from a system you have access to. Your answers save in this browser, and you can download a copy.</p>
+
+        <h3>Sample report</h3>
+        <p>Exercise: T-joint, 2F, carbon steel, 1/8 in., GMAW. Technique score 93 against a target of 90: passed. This report is made up for practice, laid out like the AugmentedArc analysis screen.</p>
+        <div class="table-scroll" tabindex="0" role="region" aria-label="Sample report (table)">
+          <table>
+            <caption>Sample report, one attempt</caption>
+            <thead><tr><th scope="col">Parameter</th><th scope="col">Range (setup screen)</th><th scope="col">Average</th><th scope="col">Score</th><th scope="col">Notes</th></tr></thead>
+            <tbody>
+                <tr><th scope="row">Work angle (&deg;)</th><td>30 &ndash; 60</td><td>44</td><td>95</td><td></td></tr>
+                <tr><th scope="row">Travel angle (&deg;)</th><td>5 &ndash; 35</td><td>21</td><td>92</td><td></td></tr>
+                <tr><th scope="row">CTWD (in.)</th><td>0.46 &ndash; 0.96</td><td>0.94</td><td>84</td><td>Red. The line climbs above 0.96 for the last third of the weld.</td></tr>
+                <tr><th scope="row">Travel speed (in/min)</th><td>2.0 &ndash; 14.0</td><td>8.3</td><td>96</td><td></td></tr>
+                <tr><th scope="row">Aim (in.)</th><td>&minus;0.25 &ndash; 0.25</td><td>0.02</td><td>97</td><td></td></tr>
+                <tr><th scope="row">Voltage (V)</th><td>16.0 &ndash; 20.0</td><td>18.1</td><td>100</td><td>Machine setting</td></tr>
+                <tr><th scope="row">Wire feed speed (in/min)</th><td>335 &ndash; 375</td><td>355</td><td>100</td><td>Machine setting</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <form data-autosave="unit-2-task" data-title="Unit 2 Task: reading a report">
+          <fieldset class="choice-item" data-q="Report used">
+            <legend>Which report are you using?</legend>
+            <div class="options">
+              <label><input type="radio" name="t2-src" value="The sample report on this page"> The sample report on this page</label>
+              <label><input type="radio" name="t2-src" value="A report from my own system"> A report from my own system</label>
+            </div>
+          </fieldset>
+          <div class="field" data-q="1. Which indicator is outside the acceptable range?">
+            <label for="t2-q1">1. Which indicator is outside the acceptable range?</label>
+            <textarea id="t2-q1" name="t2-q1" rows="2"></textarea>
+          </div>
+          <div class="field" data-q="2. What does the reading show?">
+            <label for="t2-q2">2. What does the reading show? Read the line, not just the average.</label>
+            <textarea id="t2-q2" name="t2-q2"></textarea>
+          </div>
+          <div class="field" data-q="3. What one technique change would you recommend? Write it as the cue you would give at the machine.">
+            <label for="t2-q3">3. What one technique change would you recommend? Write it as the cue you&rsquo;d give the student at the machine.</label>
+            <textarea id="t2-q3" name="t2-q3"></textarea>
+          </div>
+          <div class="btn-row">
+            <button type="button" class="btn btn--sm" data-download>Download a copy (.txt)</button>
+            <button type="button" class="btn btn--ghost btn--sm" data-clear>Clear my answers</button>
+            <span class="save-status" aria-live="polite"></span>
+          </div>
+        </form>
 
         <h2>When you&rsquo;re done</h2>
         <ul>
@@ -124,5 +169,6 @@
             </div>
         </footer>
         <script src="assets/js/site.js"></script>
+        <script src="assets/js/activities.js"></script>
     </body>
 </html>
