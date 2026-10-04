@@ -119,7 +119,8 @@
         lines.push(q.getAttribute('data-q'));
         var picked = q.querySelector('input:checked');
         if (q.querySelector('input[type="radio"]')) lines.push('Answer: ' + (picked ? picked.value : '(none)'));
-        $all('textarea', q).forEach(function (el) { lines.push('Notes: ' + (el.value || '(blank)')); });
+        var hasRadios = !!q.querySelector('input[type="radio"]');
+        $all('textarea', q).forEach(function (el) { lines.push((hasRadios ? 'Notes: ' : 'Answer: ') + (el.value || '(blank)')); });
         lines.push('');
       });
       var blob = new Blob([lines.join('\n')], { type: 'text/plain' });
