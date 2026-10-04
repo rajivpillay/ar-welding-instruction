@@ -81,9 +81,200 @@
           <p>Given a sample AR simulator performance report, interpret the feedback data and provide constructive input to the welding student, identifying the indicator outside the acceptable range and recommending one specific technique modification.</p>
         </div>
 
-        <p><strong>Placeholder.</strong> Content for this part is in development.</p>
-
         <p>Ten questions. The first five are like the Pre-Quiz, so you can see what changed. The other five use different formats. If you get 8 or more right, you&rsquo;re ready for the Unit Task. If not, the results will point you to the topics to review, and you can try again or continue to the task.</p>
+
+        <form class="quiz" data-quiz="unit-2-kc" data-mode="feedback" data-pass="8" data-mirror="5" data-pre="unit-2-pre" data-next="unit-2-task.html" data-next-name="the Unit Task">
+          <fieldset class="choice-item mcq" data-type="single" data-answer="d" data-topic="1" data-topic-href="unit-2-knowledge-building.html#t1" data-topic-name="What a simulator session records">
+            <legend>1. Which of these do you get only <em>after</em> the weld?</legend>
+            <div class="options">
+                <label><input type="radio" name="kc1" value="a" data-feedback="The guides react while the student welds."> Guides turning red and green</label>
+                <label><input type="radio" name="kc1" value="b" data-feedback="The simulated shade darkens during the weld."> The screen darkening like a lens</label>
+                <label><input type="radio" name="kc1" value="c" data-feedback="The student sees these while welding."> The machine settings across the top of the helmet view</label>
+                <label><input type="radio" name="kc1" value="d" data-feedback="Right. The graphs appear on the analysis screen once the joint is filled."> A graph of each parameter along the weld</label>
+            </div>
+            <p class="fb" aria-live="polite"></p>
+          </fieldset>
+          <fieldset class="choice-item mcq" data-type="single" data-answer="b" data-topic="2" data-topic-href="unit-2-knowledge-building.html#t2" data-topic-name="What each indicator measures">
+            <legend>2. On a fillet weld, a work angle that&rsquo;s off shows up as:</legend>
+            <div class="options">
+                <label><input type="radio" name="kc2" value="a" data-feedback="That points to travel speed that&rsquo;s too fast."> A narrow weld that lacks penetration</label>
+                <label><input type="radio" name="kc2" value="b" data-feedback="Right. Work angle affects how evenly the bead lays across the joint."> Unequal legs or undercut on one side</label>
+                <label><input type="radio" name="kc2" value="c" data-feedback="That points to travel speed that&rsquo;s too slow."> Too much heat input</label>
+                <label><input type="radio" name="kc2" value="d" data-feedback="That&rsquo;s aim."> The wire pointing outside the joint</label>
+            </div>
+            <p class="fb" aria-live="polite"></p>
+          </fieldset>
+          <fieldset class="choice-item mcq" data-type="single" data-answer="b" data-topic="3" data-topic-href="unit-2-knowledge-building.html#t3" data-topic-name="Acceptable ranges by joint and position">
+            <legend>3. Where should you get the acceptable range for a reading?</legend>
+            <div class="options">
+                <label><input type="radio" name="kc3" value="a" data-feedback="Those numbers aren&rsquo;t always the same as the exercise&rsquo;s ranges. Use the setup screen."> The numbers along the report&rsquo;s graph</label>
+                <label><input type="radio" name="kc3" value="b" data-feedback="Right. The setup screen lists the minimum, target, and maximum for each parameter."> The exercise&rsquo;s setup screen</label>
+                <label><input type="radio" name="kc3" value="c" data-feedback="The target score is for the whole attempt, not a range for each parameter."> The overall target score</label>
+                <label><input type="radio" name="kc3" value="d" data-feedback="Ranges change with joint and position."> One range that works for every position</label>
+            </div>
+            <p class="fb" aria-live="polite"></p>
+          </fieldset>
+          <fieldset class="choice-item mcq" data-type="single" data-answer="c" data-topic="4" data-topic-href="unit-2-knowledge-building.html#t4" data-topic-name="Reading a full report">
+            <legend>4. A report shows an overall score of 97 against a target of 90, and work angle scored 88 in red. What&rsquo;s the most accurate reading?</legend>
+            <div class="options">
+                <label><input type="radio" name="kc4" value="a" data-feedback="The overall score passed, but work angle did not. Scan for red."> Passed, nothing to address</label>
+                <label><input type="radio" name="kc4" value="b" data-feedback="The attempt passed. A red parameter tells you where to coach; it doesn&rsquo;t fail the whole attempt here."> Failed, because work angle is red</label>
+                <label><input type="radio" name="kc4" value="c" data-feedback="Right. Overall score first, then the red."> Passed, but work angle needs attention</label>
+                <label><input type="radio" name="kc4" value="d" data-feedback="The report already tells you the result and where to look."> You can&rsquo;t tell without the replay</label>
+            </div>
+            <p class="fb" aria-live="polite"></p>
+          </fieldset>
+          <fieldset class="choice-item mcq" data-type="single" data-answer="b" data-topic="5" data-topic-href="unit-2-knowledge-building.html#t5" data-topic-name="Turning a reading into a cue">
+            <legend>5. Which cue best helps a student who rushes near the end of the weld?</legend>
+            <div class="options">
+                <label><input type="radio" name="kc5" value="a" data-feedback="That reads the number aloud. It doesn&rsquo;t say what to do."> &ldquo;Your travel speed was 13 in/min at the end.&rdquo;</label>
+                <label><input type="radio" name="kc5" value="b" data-feedback="Right. One thing, what to do, and a way to check themselves."> &ldquo;Keep it steady. If you catch yourself rushing, breathe and keep a steady count in your head.&rdquo;</label>
+                <label><input type="radio" name="kc5" value="c" data-feedback="A score gives the student nothing to do at the machine."> &ldquo;Your travel speed score was 84.&rdquo;</label>
+                <label><input type="radio" name="kc5" value="d" data-feedback="That trades one problem for another. Aim for steady."> &ldquo;Go faster at the start so you don&rsquo;t rush later.&rdquo;</label>
+            </div>
+            <p class="fb" aria-live="polite"></p>
+          </fieldset>
+          <fieldset class="choice-item mcq" data-type="single" data-answer="b" data-topic="4" data-topic-href="unit-2-knowledge-building.html#t4" data-topic-name="Reading a full report">
+            <legend>6. On this report, travel speed averaged 5.8 in/min and scored 94, but its line climbs near the end of the weld. What does that tell you?</legend>
+            <figure class="shot">
+              <img src="images/augmentedarc-teacher-analysis.jpg" width="1400" height="877" loading="lazy"
+                   alt="AugmentedArc analysis screen in the Teacher Software. Travel speed averaged 5.8 inches per minute and scored 94. Its graph line runs fairly level across most of the weld, then climbs near the right end, where part of it is flagged red.">
+              <figcaption>Still from a Miller Electric video.</figcaption>
+            </figure>
+            <div class="options">
+                <label><input type="radio" name="kc6" value="a" data-feedback="The line says otherwise. Look at the line, not just the average."> Travel speed was right on throughout the weld.</label>
+                <label><input type="radio" name="kc6" value="b" data-feedback="Right. The average hides what happened along the weld."> The average looks fine, but the student sped up near the end.</label>
+                <label><input type="radio" name="kc6" value="c" data-feedback="Wire feed speed is a separate row, and it scored 100."> The machine changed the wire feed speed.</label>
+                <label><input type="radio" name="kc6" value="d" data-feedback="A passing attempt can still show something to coach."> Travel speed doesn&rsquo;t matter because the attempt passed.</label>
+            </div>
+            <p class="fb" aria-live="polite"></p>
+          </fieldset>
+          <fieldset class="choice-item" data-type="sort" data-explain="Work angle 28&deg; is below the 30&deg; minimum. Travel speed 15.0 is above the 14.0 maximum. Travel angle and CTWD are inside their ranges." data-topic="3" data-topic-href="unit-2-knowledge-building.html#t3" data-topic-name="Acceptable ranges by joint and position">
+            <legend>7. Compare each reading with the ranges. All four must be right to earn the point.</legend>
+            <div class="table-scroll" tabindex="0" role="region" aria-label="Ranges for question 7 (table)">
+              <table class="ranges">
+                <caption>Ranges for this exercise: T-joint, 2F</caption>
+                <thead><tr><th scope="col">Parameter</th><th scope="col">Min</th><th scope="col">Target</th><th scope="col">Max</th></tr></thead>
+                <tbody>
+                  <tr><th scope="row">Work angle (&deg;)</th><td>30</td><td>45</td><td>60</td></tr>
+                  <tr><th scope="row">Travel angle (&deg;)</th><td>5</td><td>20 (push)</td><td>35</td></tr>
+                  <tr><th scope="row">CTWD (in.)</th><td>0.46</td><td>0.71</td><td>0.96</td></tr>
+                  <tr><th scope="row">Travel speed (in/min)</th><td>2.0</td><td>8.0</td><td>14.0</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="sort-row" data-answer="below">
+              <p class="eval-q" id="kc7-1">Work angle: 28&deg;</p>
+              <div class="options" role="radiogroup" aria-labelledby="kc7-1">
+                <label><input type="radio" name="kc7-1" value="below"> Below range</label>
+                <label><input type="radio" name="kc7-1" value="in"> In range</label>
+                <label><input type="radio" name="kc7-1" value="above"> Above range</label>
+              </div>
+              <p class="row-fb"></p>
+            </div>
+            <div class="sort-row" data-answer="in">
+              <p class="eval-q" id="kc7-2">Travel angle: 22&deg;</p>
+              <div class="options" role="radiogroup" aria-labelledby="kc7-2">
+                <label><input type="radio" name="kc7-2" value="below"> Below range</label>
+                <label><input type="radio" name="kc7-2" value="in"> In range</label>
+                <label><input type="radio" name="kc7-2" value="above"> Above range</label>
+              </div>
+              <p class="row-fb"></p>
+            </div>
+            <div class="sort-row" data-answer="in">
+              <p class="eval-q" id="kc7-3">CTWD: 0.80 in.</p>
+              <div class="options" role="radiogroup" aria-labelledby="kc7-3">
+                <label><input type="radio" name="kc7-3" value="below"> Below range</label>
+                <label><input type="radio" name="kc7-3" value="in"> In range</label>
+                <label><input type="radio" name="kc7-3" value="above"> Above range</label>
+              </div>
+              <p class="row-fb"></p>
+            </div>
+            <div class="sort-row" data-answer="above">
+              <p class="eval-q" id="kc7-4">Travel speed: 15.0 in/min</p>
+              <div class="options" role="radiogroup" aria-labelledby="kc7-4">
+                <label><input type="radio" name="kc7-4" value="below"> Below range</label>
+                <label><input type="radio" name="kc7-4" value="in"> In range</label>
+                <label><input type="radio" name="kc7-4" value="above"> Above range</label>
+              </div>
+              <p class="row-fb"></p>
+            </div>
+            <p class="fb" aria-live="polite"></p>
+          </fieldset>
+          <fieldset class="choice-item mcq" data-type="single" data-answer="b" data-topic="4" data-topic-href="unit-2-knowledge-building.html#t4" data-topic-name="Reading a full report">
+            <legend>8. Before attempt 5, what do you coach first?</legend>
+            <div class="table-scroll" tabindex="0" role="region" aria-label="Example attempt record for question 8 (table)">
+              <table>
+                <caption>Example record, made up for practice</caption>
+                <thead><tr><th scope="col">Attempt</th><th scope="col">Result</th><th scope="col">Flagged red</th></tr></thead>
+                <tbody>
+                  <tr><th scope="row">1</th><td>Pass</td><td>Aim</td></tr>
+                  <tr><th scope="row">2</th><td>Fail</td><td>Travel speed</td></tr>
+                  <tr><th scope="row">3</th><td>Fail</td><td>Travel speed</td></tr>
+                  <tr><th scope="row">4</th><td>Fail</td><td>Travel speed</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="options">
+                <label><input type="radio" name="kc8" value="a" data-feedback="Aim came up once, on an attempt that passed."> Aim, because it was flagged first.</label>
+                <label><input type="radio" name="kc8" value="b" data-feedback="Right. That&rsquo;s the pattern."> Travel speed, because it&rsquo;s been red on every failed attempt.</label>
+                <label><input type="radio" name="kc8" value="c" data-feedback="Three fails in a row since then say otherwise."> Nothing. Attempt 1 passed, so the student can do it.</label>
+                <label><input type="radio" name="kc8" value="d" data-feedback="One thing at a time. Start with the pattern."> Everything flagged, all at once.</label>
+            </div>
+            <p class="fb" aria-live="polite"></p>
+          </fieldset>
+          <fieldset class="choice-item mcq" data-type="multi" data-choose="2" data-answer="a,c" data-explain="A good cue names one thing and gives the student a way to check themselves. Numbers, long lists, and late feedback make a cue harder to act on at the machine." data-topic="5" data-topic-href="unit-2-knowledge-building.html#t5" data-topic-name="Turning a reading into a cue">
+            <legend>9. Which <strong>two</strong> make a cue easier for a student to act on? Choose two.</legend>
+            <div class="options">
+                <label><input type="checkbox" name="kc9" value="a"> It names one thing.</label>
+                <label><input type="checkbox" name="kc9" value="b"> It includes the exact number from the report.</label>
+                <label><input type="checkbox" name="kc9" value="c"> It gives the student a way to check themselves.</label>
+                <label><input type="checkbox" name="kc9" value="d"> It covers every parameter on the report.</label>
+                <label><input type="checkbox" name="kc9" value="e"> It&rsquo;s given after the student leaves the booth.</label>
+            </div>
+            <p class="fb" aria-live="polite"></p>
+          </fieldset>
+          <fieldset class="choice-item" data-type="sort" data-explain="Travel angle and aim are technique, measured during the weld. Voltage and wire feed speed are machine settings, checked separately on the report." data-topic="2" data-topic-href="unit-2-knowledge-building.html#t2" data-topic-name="What each indicator measures">
+            <legend>10. Is each of these part of the student&rsquo;s technique, or a machine setting? All four must be right to earn the point.</legend>
+            <div class="sort-row" data-answer="technique">
+              <p class="eval-q" id="kc10-1">Travel angle</p>
+              <div class="options" role="radiogroup" aria-labelledby="kc10-1">
+                <label><input type="radio" name="kc10-1" value="technique"> Technique</label>
+                <label><input type="radio" name="kc10-1" value="setting"> Machine setting</label>
+              </div>
+              <p class="row-fb"></p>
+            </div>
+            <div class="sort-row" data-answer="setting">
+              <p class="eval-q" id="kc10-2">Voltage</p>
+              <div class="options" role="radiogroup" aria-labelledby="kc10-2">
+                <label><input type="radio" name="kc10-2" value="technique"> Technique</label>
+                <label><input type="radio" name="kc10-2" value="setting"> Machine setting</label>
+              </div>
+              <p class="row-fb"></p>
+            </div>
+            <div class="sort-row" data-answer="technique">
+              <p class="eval-q" id="kc10-3">Aim</p>
+              <div class="options" role="radiogroup" aria-labelledby="kc10-3">
+                <label><input type="radio" name="kc10-3" value="technique"> Technique</label>
+                <label><input type="radio" name="kc10-3" value="setting"> Machine setting</label>
+              </div>
+              <p class="row-fb"></p>
+            </div>
+            <div class="sort-row" data-answer="setting">
+              <p class="eval-q" id="kc10-4">Wire feed speed</p>
+              <div class="options" role="radiogroup" aria-labelledby="kc10-4">
+                <label><input type="radio" name="kc10-4" value="technique"> Technique</label>
+                <label><input type="radio" name="kc10-4" value="setting"> Machine setting</label>
+              </div>
+              <p class="row-fb"></p>
+            </div>
+            <p class="fb" aria-live="polite"></p>
+          </fieldset>
+          <div class="btn-row">
+            <button type="submit" class="btn btn--sm">Check my answers</button>
+          </div>
+          <div class="quiz-result" aria-live="polite"></div>
+        </form>
 
       <div class="part-foot">
         <a class="btn btn--ghost btn--sm" href="unit-2-knowledge-building.html">← Knowledge Building</a>
@@ -103,5 +294,6 @@
             </div>
         </footer>
         <script src="assets/js/site.js"></script>
+        <script src="assets/js/activities.js"></script>
     </body>
 </html>
