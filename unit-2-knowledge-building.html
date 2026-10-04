@@ -81,6 +81,17 @@
           <p>Given a sample AR simulator performance report, interpret the feedback data and provide constructive input to the welding student, identifying the indicator outside the acceptable range and recommending one specific technique modification.</p>
         </div>
 
+        <nav class="jump" aria-label="Topics on this page">
+          <p class="jump-title">In this lesson</p>
+          <ol>
+            <li><a href="#t1">What a simulator session records</a></li>
+            <li><a href="#t2">What each indicator measures</a></li>
+            <li><a href="#t3">Acceptable ranges by joint and position</a></li>
+            <li><a href="#t4">Reading a full report</a></li>
+            <li><a href="#t5">Turning a reading into a cue</a></li>
+          </ol>
+        </nav>
+
         <h2 id="t1">What a simulator session records</h2>
         <p>A session gives you feedback at two different times: while the student welds, and after the weld is done. Each tells you something different.</p>
 
@@ -487,7 +498,54 @@
         </section>
 
         <h2 id="t5">Turning a reading into a cue</h2>
-        <p><strong>Placeholder.</strong> Lesson text in development.</p>
+        <p>Reading the report is half the job. The other half is what you say to the student next. Two things go wrong here:</p>
+        <ul>
+          <li><strong>Reading the number aloud.</strong> &ldquo;Your work angle was 12 degrees off&rdquo; tells the student what happened, not what to do.</li>
+          <li><strong>Feedback the student can&rsquo;t act on at the machine.</strong> If they can&rsquo;t picture doing it with the gun in their hand, it won&rsquo;t change the next pass.</li>
+        </ul>
+
+        <h3>What a good cue does</h3>
+        <ul>
+          <li><strong>It names one thing.</strong> One change at a time. Pick the parameter you found in the report.</li>
+          <li><strong>It says what to do, not what the number was.</strong> Smooth the correction, slow down, check the distance.</li>
+          <li><strong>It gives the student a way to check themselves.</strong> A steady count in their head, a dry run before the weld, a check-in halfway through.</li>
+        </ul>
+
+        <h3>Three examples</h3>
+        <div class="table-scroll" tabindex="0" role="region" aria-label="Readings and cues (table)">
+          <table>
+            <caption>From reading to cue</caption>
+            <thead><tr><th scope="col">What the report shows</th><th scope="col">Instead of</th><th scope="col">Try</th></tr></thead>
+            <tbody>
+              <tr><td>Travel angle keeps drifting from the ideal</td><td>&ldquo;Your travel angle hit 35 degrees.&rdquo;</td><td>&ldquo;Try to catch yourself before you start drifting. Make a gradual correction, not a sudden shift in angle. Keep it smooth.&rdquo;</td></tr>
+              <tr><td>Travel speed runs fast near the end of the weld</td><td>&ldquo;You were at 13 inches per minute at the end.&rdquo;</td><td>&ldquo;Keep your travel speed steady. If you catch yourself rushing toward the end of the weld, breathe through it and keep a steady count in your head.&rdquo;</td></tr>
+              <tr><td>CTWD is too long through most of the weld</td><td>&ldquo;Your CTWD averaged 0.9 inches.&rdquo;</td><td>&ldquo;Before you weld, do a dry run so you know what the right contact-tip-to-work distance feels like. Halfway through the weld, do a quick check-in to make sure you still have it.&rdquo;</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <section class="activity" aria-labelledby="u2t5-act">
+          <p class="kicker">Try it</p>
+          <h3 id="u2t5-act">Write the cue</h3>
+          <p>Go back to the report in the last topic. The attempt passed, but travel angle scored 87 and its line reaches the top of the graph twice. What would you say to the student at the machine before the next attempt? One or two sentences.</p>
+          <div class="field">
+            <label for="u2t5-cue">Your cue</label>
+            <textarea id="u2t5-cue" name="u2t5-cue"></textarea>
+          </div>
+          <div class="btn-row">
+            <button type="button" class="btn btn--sm" data-reveal aria-expanded="false" aria-controls="u2t5-model" data-hide-text="Hide the comparison">Compare with a model cue</button>
+          </div>
+          <div class="reveal-panel" id="u2t5-model" hidden>
+            <h4>Check your cue</h4>
+            <ul>
+              <li>Does it name one thing (travel angle)?</li>
+              <li>Does it say what to do, not what the number was?</li>
+              <li>Does it give the student a way to check themselves?</li>
+            </ul>
+            <p class="cue"><span class="tag">Model cue:</span> &ldquo;Your travel angle is creeping up as you go. Try to catch yourself before you start drifting, and make a gradual correction, not a sudden shift. Keep it smooth.&rdquo;</p>
+            <p class="cue"><span class="tag">Weak cue:</span> &ldquo;Your travel angle scored 87.&rdquo; It reads the number aloud and gives the student nothing to do at the machine.</p>
+          </div>
+        </section>
 
       <div class="part-foot">
         <a class="btn btn--ghost btn--sm" href="unit-2-pre-quiz.html">← Pre-Quiz</a>

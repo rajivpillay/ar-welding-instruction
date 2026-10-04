@@ -81,7 +81,7 @@
       btn.setAttribute('aria-expanded', open ? 'false' : 'true');
       panel.hidden = open;
       btn.textContent = open ? showText : hideText;
-      if (!open) { var h = panel.querySelector('h3'); if (h) { h.setAttribute('tabindex', '-1'); h.focus(); } }
+      if (!open) { var h = panel.querySelector('h3, h4'); if (h) { h.setAttribute('tabindex', '-1'); h.focus(); } }
     });
   });
 
