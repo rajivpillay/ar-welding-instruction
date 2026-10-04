@@ -54,14 +54,15 @@
                 <button type="button" class="theme-toggle" id="theme-toggle" aria-pressed="false">Dark mode</button>
             </div>
         </header>
-        <div class="hero-band hero-band--compact">
+        <div class="hero-band hero-band--compact" role="region" aria-labelledby="page-title">
             <div class="wrap">
-                <h1>Design Attribution</h1>
+                <h1 id="page-title">Design Attribution</h1>
                 <p class="lede">Sources for the images, typefaces, and media used on this site.</p>
             </div>
         </div>
         <main id="main">
             <div class="wrap section">
+                <div class="table-scroll" tabindex="0" role="region" aria-label="Images (table)">
                 <table>
                     <caption>Images</caption>
                     <thead>
@@ -89,7 +90,7 @@
                         </tr>
                                             <tr>
                             <td>Unit 2 results-interpretation video</td>
-                            <td>Walkthrough of reading session results in the AugmentedArc instructor software.</td>
+                            <td>Walkthrough of reviewing attempts and scores in the AugmentedArc Teacher Software.</td>
                             <td>Miller Electric, embedded from the publisher&rsquo;s own YouTube channel. Not re-hosted.</td>
                         </tr>
                         <tr>
@@ -97,9 +98,41 @@
                             <td>Screenshots of an AugmentedArc analysis screen and the welder&rsquo;s live view, used to teach reading simulator feedback.</td>
                             <td>Miller Electric, used with permission.</td>
                         </tr>
+                        <tr>
+                            <td>Unit 1 session stills</td>
+                            <td>A student at the simulator beside the helmet view, and the review screen after a simulated weld.</td>
+                            <td>Miller Electric, stills from the publisher&rsquo;s video &ldquo;AugmentedArc Welding Calibration to Scoring Analysis.&rdquo; Used with permission.</td>
+                        </tr>
+                        <tr>
+                            <td>Unit 1 exercise settings screen</td>
+                            <td>The AugmentedArc exercise settings screen, used for a practice activity and a Knowledge Check question.</td>
+                            <td>Miller Electric, still from the publisher&rsquo;s video &ldquo;AugmentedArc Exercise Selection.&rdquo; Used with permission.</td>
+                        </tr>
+                        <tr>
+                            <td>Unit 1 MIG weld close-up</td>
+                            <td>A MIG weld on steel tube.</td>
+                            <td>Miller Electric, still from the publisher&rsquo;s video &ldquo;MIG Welding Techniques for Building a Mild Steel Roll Cage.&rdquo; Used with permission.</td>
+                        </tr>
+                        <tr>
+                            <td>Unit 1 welding lab photo</td>
+                            <td>Welding booths side by side in a teaching lab.</td>
+                            <td>Photo by the author. Used with the consent of the people pictured.</td>
+                        </tr>
+                        <tr>
+                            <td>Unit 2 session and exercise videos</td>
+                            <td>A simulator session from start to finish, and choosing exercise settings.</td>
+                            <td>Miller Electric, embedded from the publisher&rsquo;s own YouTube channel. Not re-hosted.</td>
+                        </tr>
+                        <tr>
+                            <td>Video transcripts</td>
+                            <td>Transcripts and a video description under each embedded video.</td>
+                            <td>Cleaned from YouTube&rsquo;s automatic captions and checked against the audio by the author.</td>
+                        </tr>
                     </tbody>
                 </table>
+                </div>
 
+                <div class="table-scroll" tabindex="0" role="region" aria-label="Typefaces (table)">
                 <table>
                     <caption>Typefaces</caption>
                     <thead>
@@ -122,6 +155,7 @@
                         </tr>
                     </tbody>
                 </table>
+                </div>
 
                 <h2>Generative AI</h2>
                 <p>Generative AI was used for image generation, page styling, and accessibility verification. Instructional content is author-generated.</p>

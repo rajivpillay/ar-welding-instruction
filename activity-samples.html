@@ -55,9 +55,9 @@
                 <button type="button" class="theme-toggle" id="theme-toggle" aria-pressed="false">Dark mode</button>
             </div>
         </header>
-                <div class="hero-band hero-band--compact">
+                <div class="hero-band hero-band--compact" role="region" aria-labelledby="page-title">
             <div class="wrap">
-                <h1>Activity Samples</h1>
+                <h1 id="page-title">Activity Samples</h1>
                 <p class="lede">Test page for review. Not linked from the course.</p>
             </div>
         </div>
@@ -231,6 +231,7 @@
               <h2 id="h-range">Read it against the range</h2>
               <p class="meta">Would serve: Unit 2, Knowledge Check, outcome 2</p>
               <p>These ranges come from the exercise setup screen: T-joint, 2F, carbon steel, 1/8 in., GMAW.</p>
+              <div class="table-scroll" tabindex="0" role="region" aria-label="Acceptable ranges for this exercise (table)">
               <table class="ranges">
                 <caption>Acceptable ranges for this exercise</caption>
                 <thead><tr><th scope="col">Parameter</th><th scope="col">Min</th><th scope="col">Target</th><th scope="col">Max</th></tr></thead>
@@ -242,6 +243,7 @@
                   <tr><th scope="row">Voltage (V)</th><td>16.0</td><td>18.0</td><td>20.0</td></tr>
                 </tbody>
               </table>
+              </div>
               <p>Example readings from one student&rsquo;s report. These are made up for practice, not from a real session.</p>
               <div data-choice-set>
           <fieldset class="choice-item" data-answer="in" data-explain="52&deg; is inside 30&ndash;60&deg;.">

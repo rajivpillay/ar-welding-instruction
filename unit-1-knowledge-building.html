@@ -54,10 +54,10 @@
                 <button type="button" class="theme-toggle" id="theme-toggle" aria-pressed="false">Dark mode</button>
             </div>
         </header>
-        <div class="hero-band hero-band--compact">
+        <div class="hero-band hero-band--compact" role="region" aria-labelledby="page-title">
   <div class="wrap">
     <p class="eyebrow">Unit 1 &middot; Part 3 of 6</p>
-    <h1>Knowledge Building</h1>
+    <h1 id="page-title">Knowledge Building</h1>
     <p class="lede">Orientation and Goal Setting</p>
   </div>
 </div>
@@ -80,6 +80,17 @@
           <h2 class="label">Unit objective</h2>
           <p>Using the provided AR System Evaluation, evaluate an AR welding training system for fit with your existing welding theory and lab practices, completing every section.</p>
         </div>
+
+        <nav class="jump" aria-label="Topics on this page">
+          <p class="jump-title">In this lesson</p>
+          <ol>
+            <li><a href="#t1">What an AR welding session is</a></li>
+            <li><a href="#t2">What AR supplements, and what it can&rsquo;t replace</a></li>
+            <li><a href="#t3">Reading vendor materials</a></li>
+            <li><a href="#t4">Setting your goals</a></li>
+            <li><a href="#t5">Working through the AR System Evaluation</a></li>
+          </ol>
+        </nav>
 
         <h2 id="t1">What an AR welding session is and what it produces</h2>
 
@@ -336,6 +347,7 @@
           <a href="https://contenthub.itwwelding.com/api/public/content/miller-electric-mfg-llc/flyer-brochure/PIM/75b353-augmentedarc-infographic.pdf">Miller&rsquo;s AugmentedArc infographic</a>
           (PDF, opens on Miller&rsquo;s website).</p>
 
+        <div class="table-scroll" tabindex="0" role="region" aria-label="What the infographic claims (table)">
         <table>
           <caption>What the infographic claims. These are the vendor&rsquo;s figures, reproduced here for examination, not endorsed.</caption>
           <thead>
@@ -351,6 +363,7 @@
             <tr><td>Material waste on coupons</td><td>&mdash;</td><td>60% reduction claimed</td></tr>
           </tbody>
         </table>
+        </div>
 
         <p>Attributed to a 2018 Gateway Technical College study overview: 20 novice welders in two groups, across 22 live welding exercises. No methodology, sample details, or published source is cited.</p>
 

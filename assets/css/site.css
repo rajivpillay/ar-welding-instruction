@@ -700,7 +700,9 @@ details.transcript .ts {
 .part-foot .spacer { flex: 1 1 auto; }
 
 @media (max-width: 58rem) {
-  .unit-layout { grid-template-columns: 1fr; gap: 1.25rem; }
+  .unit-layout { grid-template-columns: minmax(0, 1fr); gap: 1.25rem; }
+  th, td { padding: .5rem .45rem; }
+  th { letter-spacing: .02em; }
   .unit-nav { position: static; }
   .unit-nav-toggle { display: block; }
   .unit-nav h2 { display: none; }
@@ -915,3 +917,15 @@ form.quiz fieldset[disabled] .options label { cursor: default; }
 .quiz-result:not(:empty) { border: 1px solid var(--border-strong); border-left: 5px solid var(--accent); border-radius: var(--radius); padding: 1rem 1.25rem; }
 .quiz-result .result-score { font-size: 1.125rem; margin-top: 0; }
 .mcq .shot { margin: .5rem 0 .75rem; }
+
+/* Tables scroll inside their own box on narrow screens, not the whole page */
+.table-scroll { overflow-x: auto; margin-bottom: 1.5rem; }
+.table-scroll > table { margin-bottom: 0; }
+.table-scroll:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+
+/* In-page topic list */
+.jump { border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); padding: .9rem 1.2rem .6rem; margin: 0 0 2rem; }
+.jump-title { font-family: var(--font-display); font-weight: 700; font-size: .875rem; letter-spacing: .06em; text-transform: uppercase; color: var(--accent); margin: 0 0 .4rem; }
+.jump ol { margin: 0; padding-left: 1.25rem; }
+.jump li { margin: .2rem 0; }
+:target { scroll-margin-top: 5.5rem; }
