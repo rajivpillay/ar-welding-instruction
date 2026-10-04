@@ -846,3 +846,50 @@ table.ranges td, table.ranges th { text-align: left; }
 .field textarea:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
 .save-status { font-size: .875rem; color: var(--muted); }
 .activity .btn-row { margin: 1rem 0 0; align-items: center; }
+
+.activity h3 { margin-top: 0; }
+
+/* Numbered steps shown as a row of cards on wide screens */
+ol.steps {
+  list-style: none;
+  counter-reset: step;
+  padding: 0;
+  margin: 0 0 1.75rem;
+  display: grid;
+  gap: .75rem;
+}
+ol.steps li {
+  counter-increment: step;
+  position: relative;
+  border: 1px solid var(--border-strong);
+  border-top: 4px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 2.4rem 1rem 1rem;
+  background: var(--surface);
+  margin: 0;
+}
+ol.steps li::before {
+  content: counter(step);
+  position: absolute;
+  top: .7rem; left: 1rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: .875rem;
+  width: 1.5rem; height: 1.5rem;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--on-accent);
+  display: grid; place-items: center;
+}
+@media (min-width: 46rem) {
+  ol.steps { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  ol.steps li:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: -1.15rem; top: 50%;
+    width: .6rem; height: .6rem;
+    border-top: 2px solid var(--border-strong);
+    border-right: 2px solid var(--border-strong);
+    transform: translateY(-50%) rotate(45deg);
+  }
+}
