@@ -81,7 +81,8 @@
           <p>Given a sample AR simulator performance report, interpret the feedback data and provide constructive input to the welding student, identifying the indicator outside the acceptable range and recommending one specific technique modification.</p>
         </div>
 
-        <h2>What a simulator session records</h2>
+        <h2 id="t1">What a simulator session records</h2>
+        <p>A session gives you feedback at two different times: while the student welds, and after the weld is done. Each tells you something different.</p>
 
         <figure class="video">
           <div class="video-frame">
@@ -109,10 +110,106 @@
           <figcaption>The live view during a session. Guidance marks show the target path and gun position while the student welds.</figcaption>
         </figure>
 
-        <h2>What each indicator measures</h2>
+        <h3>During the weld</h3>
+        <p>While the student welds, the guides in the helmet do the coaching. Each guide tracks one part of technique: contact-tip-to-work distance, gun angles, travel speed, and aim. A guide turns red when that part drifts and green when it&rsquo;s back on track. The student also sees the machine settings across the top of the view.</p>
+        <p>Your job during the weld is different. Watch the student, not the screen. Pay attention to body position, and to how comfortable and relaxed they are as they work on their technique.</p>
+
+        <h3>After the weld</h3>
+        <p>When the joint is filled, the system shows the analysis screen:</p>
+        <ul>
+          <li>A technique score, compared with a target score</li>
+          <li>A check on the equipment settings</li>
+          <li>A score for each parameter, with its average</li>
+          <li>A graph of each parameter along the length of the weld</li>
+          <li>A replay of the weld, and a 3D view</li>
+        </ul>
+        <p>In the Teacher Software, every attempt is saved with its date and time and marked pass or fail. That record lets you look across attempts, not just at one.</p>
+
+        <h3>Putting the two together</h3>
+        <p>Before you look at the report, check in with the student. How did it feel? What did they struggle with? What would they improve?</p>
+        <p>Treat what they tell you as something to check. If a student says &ldquo;I think I sped up near the end,&rdquo; look at the travel speed graph near the end of the weld. Sometimes the data confirms what the student felt. Sometimes it points to something they didn&rsquo;t notice. Either way, you&rsquo;ve started the conversation with the student, and the data backs it up.</p>
+
+        <section class="activity" aria-labelledby="u2t1-act">
+          <p class="kicker">Try it</p>
+          <h3 id="u2t1-act">During the weld, or after it?</h3>
+          <p>When do you get each of these?</p>
+          <div data-choice-set>
+            <fieldset class="choice-item" data-answer="during" data-explain="The guides react as the student welds, so technique can be corrected mid-pass.">
+              <legend>A guide turns from red to green</legend>
+              <div class="options">
+                <label><input type="radio" name="u2t1-1" value="during"> During the weld</label>
+                <label><input type="radio" name="u2t1-1" value="after"> After the weld</label>
+              </div>
+              <p class="fb" aria-live="polite"></p>
+            </fieldset>
+            <fieldset class="choice-item" data-answer="after" data-explain="Scores appear on the analysis screen once the joint is filled.">
+              <legend>A score for each parameter, compared with the target</legend>
+              <div class="options">
+                <label><input type="radio" name="u2t1-2" value="during"> During the weld</label>
+                <label><input type="radio" name="u2t1-2" value="after"> After the weld</label>
+              </div>
+              <p class="fb" aria-live="polite"></p>
+            </fieldset>
+            <fieldset class="choice-item" data-answer="during" data-explain="That&rsquo;s yours to watch while they weld. The system doesn&rsquo;t record it.">
+              <legend>You notice the student&rsquo;s shoulders are tense</legend>
+              <div class="options">
+                <label><input type="radio" name="u2t1-3" value="during"> During the weld</label>
+                <label><input type="radio" name="u2t1-3" value="after"> After the weld</label>
+              </div>
+              <p class="fb" aria-live="polite"></p>
+            </fieldset>
+            <fieldset class="choice-item" data-answer="after" data-explain="The replay is offered on the analysis screen after the weld.">
+              <legend>A replay of the weld</legend>
+              <div class="options">
+                <label><input type="radio" name="u2t1-4" value="during"> During the weld</label>
+                <label><input type="radio" name="u2t1-4" value="after"> After the weld</label>
+              </div>
+              <p class="fb" aria-live="polite"></p>
+            </fieldset>
+            <fieldset class="choice-item" data-answer="during" data-explain="The student sees the machine settings while welding.">
+              <legend>The voltage and wire feed speed readout across the top of the helmet view</legend>
+              <div class="options">
+                <label><input type="radio" name="u2t1-5" value="during"> During the weld</label>
+                <label><input type="radio" name="u2t1-5" value="after"> After the weld</label>
+              </div>
+              <p class="fb" aria-live="polite"></p>
+            </fieldset>
+            <fieldset class="choice-item" data-answer="after" data-explain="The graphs on the analysis screen show each reading across the whole weld.">
+              <legend>A graph of travel speed along the length of the weld</legend>
+              <div class="options">
+                <label><input type="radio" name="u2t1-6" value="during"> During the weld</label>
+                <label><input type="radio" name="u2t1-6" value="after"> After the weld</label>
+              </div>
+              <p class="fb" aria-live="polite"></p>
+            </fieldset>
+            <fieldset class="choice-item" data-answer="after" data-explain="The Teacher Software keeps a record of every attempt.">
+              <legend>The attempt is saved with its date and a pass or fail mark</legend>
+              <div class="options">
+                <label><input type="radio" name="u2t1-7" value="during"> During the weld</label>
+                <label><input type="radio" name="u2t1-7" value="after"> After the weld</label>
+              </div>
+              <p class="fb" aria-live="polite"></p>
+            </fieldset>
+            <fieldset class="choice-item" data-answer="during" data-explain="The simulated helmet shade darkens the view while the student welds.">
+              <legend>The screen darkens like a welding lens</legend>
+              <div class="options">
+                <label><input type="radio" name="u2t1-8" value="during"> During the weld</label>
+                <label><input type="radio" name="u2t1-8" value="after"> After the weld</label>
+              </div>
+              <p class="fb" aria-live="polite"></p>
+            </fieldset>
+            <div class="btn-row">
+              <button type="button" class="btn btn--sm" data-check>Check my answers</button>
+              <button type="button" class="btn btn--ghost btn--sm" data-reset>Start over</button>
+            </div>
+            <p class="result" aria-live="polite"></p>
+          </div>
+        </section>
+
+        <h2 id="t2">What each indicator measures</h2>
         <p><strong>Placeholder.</strong> Lesson text in development. Indicators covered: work angle, travel angle, contact-tip-to-work distance, travel speed, and aim.</p>
 
-        <h2>Acceptable ranges, and how they shift with joint and position</h2>
+        <h2 id="t3">Acceptable ranges, and how they shift with joint and position</h2>
 
         <figure class="video">
           <div class="video-frame">
@@ -136,7 +233,7 @@
 
         <p><strong>Placeholder.</strong> Lesson text in development.</p>
 
-        <h2>Reading a full report</h2>
+        <h2 id="t4">Reading a full report</h2>
 
         <figure class="video">
           <div class="video-frame">
@@ -171,7 +268,7 @@
 
         <p><strong>Placeholder.</strong> Lesson text in development. This lesson works through the screen above: where to look first, why a passing overall score can sit on top of a failing parameter, and why an average inside the band can still hide excursions outside it.</p>
 
-        <h2>Turning a reading into a cue</h2>
+        <h2 id="t5">Turning a reading into a cue</h2>
         <p><strong>Placeholder.</strong> Lesson text in development.</p>
 
       <div class="part-foot">
@@ -192,5 +289,6 @@
             </div>
         </footer>
         <script src="assets/js/site.js"></script>
+        <script src="assets/js/activities.js"></script>
     </body>
 </html>
