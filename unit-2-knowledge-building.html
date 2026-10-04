@@ -390,6 +390,33 @@
         </section>
 
         <h2 id="t4">Reading a full report</h2>
+        <p>When you sit down with a student&rsquo;s report, work through it in order.</p>
+        <ol class="steps">
+          <li><strong>Start with the overall score.</strong> It gives you an overview of how the student did on the weldment.</li>
+          <li><strong>Scan for red.</strong> Parameters highlighted in red are where attention needs to go first.</li>
+          <li><strong>Then the rest, with the student.</strong> Once the priority areas are covered, look at the other parameters, along with what the student was concerned about in their own technique.</li>
+        </ol>
+
+        <figure class="shot">
+          <img src="images/augmentedarc-analysis-screen.jpg" width="900" height="675"
+               alt="An AugmentedArc analysis screen. Technique Parameters score 96 against a target of 90, marked with a green check. Six rows show work angle averaging 38 degrees scoring 95, travel angle averaging 29 degrees scoring 87 and highlighted in red, contact-tip-to-work distance averaging 0.75 inches scoring 94, travel speed averaging 9.7 inches per minute scoring 98, aim averaging 0.07 inches scoring 97, with voltage and wire feed speed both scoring 100. Each row has a trace graph showing the value over the length of the weld, with red segments where the system flagged travel angle.">
+          <figcaption>A completed pass. The overall score reads 96 against a target of 90, and the session passed. One parameter did not.</figcaption>
+        </figure>
+
+        <h3>Two things the overall score can hide</h3>
+        <ul>
+          <li><strong>A parameter that didn&rsquo;t pass.</strong> On the report above, the overall score is 96 against a target of 90, and the attempt passed. Travel angle scored 87 and is highlighted red. That&rsquo;s why step 2 matters.</li>
+          <li><strong>What happened along the weld.</strong> Travel angle averaged 29&deg;, but the line reaches the top of its graph twice. An average can look fine while the line shows the trouble. Look at the line, not just the average.</li>
+        </ul>
+
+        <h3>Look across attempts</h3>
+        <p>The Teacher Software keeps every attempt, with its date and a pass or fail mark. If the same parameter keeps coming up red, that&rsquo;s the pattern to coach first. One red reading on one attempt may be a one-off.</p>
+
+        <figure class="shot">
+          <img src="images/augmentedarc-attempt-record.jpg" width="1200" height="752" loading="lazy"
+               alt="A student's academic record in the AugmentedArc Teacher Software, 25 percent complete. Under Welding Basics, SMAW Basics, Day 1 lists the SMAW 101 lesson, a SMAW 101 quiz with one failed attempt marked with a red X, and a 1G bead-on-plate exercise. Day 2 lists a 2F T-joint E7018 exercise with four attempts, each dated and marked with a green check. Each attempt has icons to play, view, export as PDF, and delete.">
+          <figcaption>A student&rsquo;s record in the Teacher Software. Every attempt is dated and marked pass or fail. Still from a Miller Electric video; the record shown dates from 2020, and current software may look different.</figcaption>
+        </figure>
 
         <figure class="video">
           <div class="video-frame">
@@ -416,13 +443,48 @@
           <p><span class="ts">4:12</span> For additional information on setting up your AugmentedArc welding training system, see your owner's manual or visit millerwelds.com.</p>
         </details>
 
-        <figure class="shot">
-          <img src="images/augmentedarc-analysis-screen.jpg" width="900" height="675"
-               alt="An AugmentedArc analysis screen. Technique Parameters score 96 against a target of 90, marked with a green check. Six rows show work angle averaging 38 degrees scoring 95, travel angle averaging 29 degrees scoring 87 and highlighted in red, contact-tip-to-work distance averaging 0.75 inches scoring 94, travel speed averaging 9.7 inches per minute scoring 98, aim averaging 0.07 inches scoring 97, with voltage and wire feed speed both scoring 100. Each row has a trace graph showing the value over the length of the weld, with red segments where the system flagged travel angle.">
-          <figcaption>A completed pass. The overall score reads 96 against a target of 90, and the session passed. One parameter did not.</figcaption>
-        </figure>
-
-        <p><strong>Placeholder.</strong> Lesson text in development. This lesson works through the screen above: where to look first, why a passing overall score can sit on top of a failing parameter, and why an average inside the band can still hide excursions outside it.</p>
+        <section class="activity" aria-labelledby="u2t4-act">
+          <p class="kicker">Try it</p>
+          <h3 id="u2t4-act">Read the report, then the record</h3>
+          <div data-mcq>
+            <fieldset class="choice-item mcq">
+              <legend>Look at the report screen above. What is the most accurate reading of this attempt?</legend>
+              <div class="options">
+                <label><input type="radio" name="u2t4a" value="a" data-feedback="The overall score passed, but travel angle did not. Stopping at the overall score is the most common mistake when reading these reports."> It passed. The overall score is above target, so there is nothing to address.</label>
+                <label><input type="radio" name="u2t4a" value="b" data-correct data-feedback="The attempt passed, and one parameter still needs coaching. Overall score first, then the red."> It passed, but travel angle needs attention before the next attempt.</label>
+                <label><input type="radio" name="u2t4a" value="c" data-feedback="The screen marks the attempt as passed with a green check. A red parameter doesn&rsquo;t fail the whole attempt here; it tells you where to coach."> It failed, because one parameter is red.</label>
+                <label><input type="radio" name="u2t4a" value="d" data-feedback="The replay can help, but this screen already tells you the result and which parameter to look at."> You can&rsquo;t tell without watching the replay.</label>
+              </div>
+              <p class="fb" aria-live="polite"></p>
+            </fieldset>
+            <div class="btn-row"><button type="button" class="btn btn--sm" data-check>Check my answer</button></div>
+          </div>
+          <div class="table-scroll" tabindex="0" role="region" aria-label="Example attempt record (table)">
+            <table>
+              <caption>Example record for one student, one exercise. Made up for practice.</caption>
+              <thead><tr><th scope="col">Attempt</th><th scope="col">Result</th><th scope="col">Parameters flagged red</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">1</th><td>Fail</td><td>Travel angle</td></tr>
+                <tr><th scope="row">2</th><td>Fail</td><td>Travel angle</td></tr>
+                <tr><th scope="row">3</th><td>Pass</td><td>None</td></tr>
+                <tr><th scope="row">4</th><td>Fail</td><td>Travel angle, CTWD</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div data-mcq>
+            <fieldset class="choice-item mcq">
+              <legend>Before attempt 5, what do you coach first?</legend>
+              <div class="options">
+                <label><input type="radio" name="u2t4b" value="a" data-feedback="CTWD showed up once. Travel angle has been red on every failed attempt."> CTWD, because it&rsquo;s new on the last attempt.</label>
+                <label><input type="radio" name="u2t4b" value="b" data-correct data-feedback="Travel angle is the pattern: it&rsquo;s been flagged on every failed attempt. Start there."> Travel angle, because it&rsquo;s been red on every failed attempt.</label>
+                <label><input type="radio" name="u2t4b" value="c" data-feedback="One pass among three fails isn&rsquo;t a pattern of success. Attempt 4 shows the problem came back."> Nothing yet. Attempt 3 passed, so the student has it.</label>
+                <label><input type="radio" name="u2t4b" value="d" data-feedback="More attempts without a cue may repeat the same problem. Give them one thing to work on."> Have them repeat the exercise until they pass twice in a row.</label>
+              </div>
+              <p class="fb" aria-live="polite"></p>
+            </fieldset>
+            <div class="btn-row"><button type="button" class="btn btn--sm" data-check>Check my answer</button></div>
+          </div>
+        </section>
 
         <h2 id="t5">Turning a reading into a cue</h2>
         <p><strong>Placeholder.</strong> Lesson text in development.</p>
