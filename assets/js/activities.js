@@ -147,4 +147,47 @@
       status.textContent = 'Cleared.';
     });
   });
+  /* ---- Quizzes (Pre-Quiz now; Knowledge Check later) ----
+     The first attempt is saved in this browser: it is the score the study uses.
+     Score-only mode shows the total and nothing else, so answers stay unseen.
+     A facilitator can clear a saved score by opening the page with ?reset   */
+  var SKEY = 'simtosteel.scores';
+  function readScores() { try { return JSON.parse(localStorage.getItem(SKEY) || '{}'); } catch (e) { return {}; } }
+  function writeScores(o) { try { localStorage.setItem(SKEY, JSON.stringify(o)); } catch (e) {} }
+
+  $all('form[data-quiz]').forEach(function (form) {
+    var id = form.getAttribute('data-quiz');
+    var items = $all('fieldset[data-answer]', form);
+    var result = form.querySelector('.result');
+    var submit = form.querySelector('[type="submit"]');
+
+    if (/[?&]reset\b/.test(location.search)) {
+      var sc = readScores(); delete sc[id]; writeScores(sc);
+    }
+    function lock(rec) {
+      items.forEach(function (fs) { fs.disabled = true; });
+      if (submit) submit.hidden = true;
+      result.textContent = 'You got ' + rec.score + ' of ' + rec.total + '. This isn\u2019t graded. ' +
+        'Your score is saved in this browser, and the Knowledge Check will show you what changed.';
+    }
+    var prior = readScores()[id];
+    if (prior) lock(prior);
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var missing = items.filter(function (fs) { return !fs.querySelector('input:checked'); });
+      if (missing.length) {
+        result.textContent = 'Answer all ' + items.length + ' questions first. ' + missing.length + ' still open.';
+        var first = missing[0].querySelector('input'); if (first) first.focus();
+        return;
+      }
+      var score = items.filter(function (fs) {
+        return fs.querySelector('input:checked').value === fs.getAttribute('data-answer');
+      }).length;
+      var rec = { score: score, total: items.length, date: new Date().toISOString().slice(0, 10) };
+      var all = readScores(); if (!all[id]) { all[id] = rec; writeScores(all); }
+      lock(all[id]);
+      result.setAttribute('tabindex', '-1'); result.focus();
+    });
+  });
 })();

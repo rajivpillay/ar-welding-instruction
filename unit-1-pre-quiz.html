@@ -81,11 +81,59 @@
           <p>Using the provided AR System Evaluation, evaluate an AR welding training system for fit with your existing welding theory and lab practices, completing every section.</p>
         </div>
 
-        <div class="note">
-          <p><strong>Placeholder: In development.</strong> Pre-quiz items to be written.</p>
-        </div>
-
         <p>Five questions before the lessons begin. This isn&rsquo;t graded. It shows what you already know, so you can see what you learn. You&rsquo;ll see your score, but not the answers. Questions like these come back in the Knowledge Check.</p>
+
+        <form class="quiz" data-quiz="unit-1-pre" data-mode="score-only">
+          <fieldset class="choice-item mcq" data-answer="d">
+            <legend>1. After an AR session, which of these can only the student tell you?</legend>
+            <div class="options">
+                <label><input type="radio" name="pq1" value="a"> The travel angle score</label>
+                <label><input type="radio" name="pq1" value="b"> A replay of the weld</label>
+                <label><input type="radio" name="pq1" value="c"> The overall score against the target</label>
+                <label><input type="radio" name="pq1" value="d"> Why they lost track of the joint</label>
+            </div>
+          </fieldset>
+          <fieldset class="choice-item mcq" data-answer="c">
+            <legend>2. A student has scored well on the simulator for weeks. What do they still need the live booth for?</legend>
+            <div class="options">
+                <label><input type="radio" name="pq2" value="a"> The basic motion of a 2F fillet weld</label>
+                <label><input type="radio" name="pq2" value="b"> A comfortable body position</label>
+                <label><input type="radio" name="pq2" value="c"> Working safely around heat and spatter</label>
+                <label><input type="radio" name="pq2" value="d"> Where to start the wire on the joint</label>
+            </div>
+          </fieldset>
+          <fieldset class="choice-item mcq" data-answer="b">
+            <legend>3. A brochure says a simulator &ldquo;cuts training hours by 65%.&rdquo; What&rsquo;s the best first question to ask?</legend>
+            <div class="options">
+                <label><input type="radio" name="pq3" value="a"> Which welding processes does it support?</label>
+                <label><input type="radio" name="pq3" value="b"> How was that number measured?</label>
+                <label><input type="radio" name="pq3" value="c"> Are software updates included?</label>
+                <label><input type="radio" name="pq3" value="d"> How many stations come with it?</label>
+            </div>
+          </fieldset>
+          <fieldset class="choice-item mcq" data-answer="c">
+            <legend>4. Which of these is an <em>instructional</em> goal, not an operational one?</legend>
+            <div class="options">
+                <label><input type="radio" name="pq4" value="a"> Free up booth time early in the term</label>
+                <label><input type="radio" name="pq4" value="b"> Spend less on practice coupons</label>
+                <label><input type="radio" name="pq4" value="c"> Help beginners hold a steady travel speed</label>
+                <label><input type="radio" name="pq4" value="d"> Serve more students without more booths</label>
+            </div>
+          </fieldset>
+          <fieldset class="choice-item mcq" data-answer="c">
+            <legend>5. You&rsquo;re evaluating a system from vendor materials, and nothing says whether it supports overhead welding. What do you mark?</legend>
+            <div class="options">
+                <label><input type="radio" name="pq5" value="a"> Yes, since most systems cover it</label>
+                <label><input type="radio" name="pq5" value="b"> No, since it isn&rsquo;t listed</label>
+                <label><input type="radio" name="pq5" value="c"> Not sure, and ask the vendor</label>
+                <label><input type="radio" name="pq5" value="d"> Leave it blank and move on</label>
+            </div>
+          </fieldset>
+          <div class="btn-row">
+            <button type="submit" class="btn btn--sm">See my score</button>
+          </div>
+          <p class="result" aria-live="polite"></p>
+        </form>
 
       <div class="part-foot">
         <a class="btn btn--ghost btn--sm" href="unit-1.html">← Overview</a>
@@ -105,5 +153,6 @@
             </div>
         </footer>
         <script src="assets/js/site.js"></script>
+        <script src="assets/js/activities.js"></script>
     </body>
 </html>
