@@ -107,6 +107,16 @@
     });
     if (Object.keys(saved).length) status.textContent = 'Restored your saved answers from this browser.';
 
+    /* Prefill empty fields from another saved form: data-prefill="formKey:fieldName" */
+    $all('[data-prefill]', form).forEach(function (el) {
+      if (el.value) return;
+      var parts = el.getAttribute('data-prefill').split(':');
+      try {
+        var other = JSON.parse(localStorage.getItem('simtosteel.form.' + parts[0]) || '{}');
+        if (other[parts[1]]) { el.value = other[parts[1]]; write(collect()); }
+      } catch (e) {}
+    });
+
     form.addEventListener('input', function () {
       status.textContent = write(collect()) ? 'Saved in this browser.' : 'Could not save in this browser. Download a copy before you leave.';
     });

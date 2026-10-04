@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>AR System Evaluation &mdash; Sim to Steel</title>
+        <meta name="description" content="A checklist and short report for evaluating an AR welding training system against your program&rsquo;s goals.">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/site.css">
+    </head>
+    <body>
+        <a class="skip-link" href="#main">Skip to main content</a>
+        <header class="site-header">
+            <div class="wrap">
+                <a class="brand" href="index.html">Sim to <span>Steel</span></a>
+                <nav class="nav" aria-label="Main">
+                    <ul>
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="introduction.html">Introduction</a>
+                        </li>
+                        <li class="dropdown">
+                            <button type="button" class="dropdown-toggle" aria-expanded="false" aria-controls="units-menu">Units</button>
+                            <ul class="dropdown-menu" id="units-menu">
+                                <li>
+                                    <a href="unit-1.html">Unit 1 &mdash; Orientation and Goal Setting</a>
+                                </li>
+                                <li>
+                                    <a href="unit-2.html">Unit 2 &mdash; The AR Session and Its Feedback</a>
+                                </li>
+                                <li>
+                                    <a href="unit-3.html">Unit 3 &mdash; Aligning AR with Curriculum and Safety</a>
+                                </li>
+                                <li>
+                                    <a href="unit-4.html">Unit 4 &mdash; Building an Integration Plan</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="planning-tools.html" aria-current="page">Planning Tools</a>
+                        </li>
+                        <li>
+                            <a href="syllabus.html">Syllabus</a>
+                        </li>
+                        <li>
+                            <a href="calendar.html">Calendar</a>
+                        </li>
+                    </ul>
+                </nav>
+                <button type="button" class="theme-toggle" id="theme-toggle" aria-pressed="false">Dark mode</button>
+            </div>
+        </header>
+        <div class="hero-band hero-band--compact">
+            <div class="wrap">
+                <p class="eyebrow">Planning Tools</p>
+                <h1>AR System Evaluation</h1>
+                <p class="lede">A checklist and a short report for judging whether an AR welding system fits your program.</p>
+            </div>
+        </div>
+        <main id="main">
+          <div class="wrap section eval-page">
+            <p>Your answers save in this browser only and are not sent anywhere. Download a copy when you finish. You use this tool in the <a href="unit-1-task.html">Unit 1 Task</a>.</p>
+        <form class="eval-form" data-autosave="ar-system-evaluation" data-title="AR System Evaluation">
+          <h2>About this evaluation</h2>
+          <div class="field" data-q="System evaluated">
+            <label for="sys">System you are evaluating (name and vendor)</label>
+            <textarea id="sys" name="sys" rows="2"></textarea>
+          </div>
+          <div class="field" data-q="Materials used">
+            <label for="src">What you used to evaluate it: a system you have access to, vendor materials, or this course&rsquo;s Miller materials</label>
+            <textarea id="src" name="src" rows="2"></textarea>
+          </div>
+
+          <h2>Your goals</h2>
+          <p>Filled in from Unit 1 if you wrote them there. Edit them here if you like.</p>
+          <div class="field" data-q="My operational goal (for my program)">
+            <label for="g-op">My operational goal (for my program)</label>
+            <textarea id="g-op" name="g-op" data-prefill="unit-1-goals:g-op"></textarea>
+          </div>
+          <div class="field" data-q="My instructional goal (for my students)">
+            <label for="g-in">My instructional goal (for my students)</label>
+            <textarea id="g-in" name="g-in" data-prefill="unit-1-goals:g-in"></textarea>
+          </div>
+
+          <h2>Part 1: Checklist</h2>
+          <p>18 quick questions in eight areas. &ldquo;Not sure&rdquo; is an honest answer: add it to your list of questions for the vendor.</p>
+          <fieldset class="choice-item eval-area">
+            <legend>1. Training features</legend>
+            <div class="eval-item" data-q="1.1 Can you set the exercise: joint, position, process, and filler?">
+              <p class="eval-q" id="q1-1">Can you set the exercise: joint, position, process, and filler?</p>
+              <div class="options" role="radiogroup" aria-labelledby="q1-1">
+                <label><input type="radio" name="a1-1" value="Yes"> Yes</label>
+                <label><input type="radio" name="a1-1" value="No"> No</label>
+                <label><input type="radio" name="a1-1" value="Not sure"> Not sure</label>
+              </div>
+            </div>
+            <div class="eval-item" data-q="1.2 Can you adjust the difficulty?">
+              <p class="eval-q" id="q1-2">Can you adjust the difficulty?</p>
+              <div class="options" role="radiogroup" aria-labelledby="q1-2">
+                <label><input type="radio" name="a1-2" value="Yes"> Yes</label>
+                <label><input type="radio" name="a1-2" value="No"> No</label>
+                <label><input type="radio" name="a1-2" value="Not sure"> Not sure</label>
+              </div>
+            </div>
+            <div class="eval-item" data-q="1.3 Can you turn the guides on and off?">
+              <p class="eval-q" id="q1-3">Can you turn the guides on and off?</p>
+              <div class="options" role="radiogroup" aria-labelledby="q1-3">
+                <label><input type="radio" name="a1-3" value="Yes"> Yes</label>
+                <label><input type="radio" name="a1-3" value="No"> No</label>
+                <label><input type="radio" name="a1-3" value="Not sure"> Not sure</label>
+              </div>
+            </div>
+            <div class="field" data-q="Notes: Training features">
+              <label for="n1">Notes on training features</label>
+              <textarea id="n1" name="n1"></textarea>
+            </div>
+          </fieldset>
+
+          <fieldset class="choice-item eval-area">
+            <legend>2. Ease of use</legend>
+            <div class="eval-item" data-q="2.1 Could an instructor new to the system set up a session without the vendor there?">
+              <p class="eval-q" id="q2-1">Could an instructor new to the system set up a session without the vendor there?</p>
+              <div class="options" role="radiogroup" aria-labelledby="q2-1">
+                <label><input type="radio" name="a2-1" value="Yes"> Yes</label>
+                <label><input type="radio" name="a2-1" value="No"> No</label>
+                <label><input type="radio" name="a2-1" value="Not sure"> Not sure</label>
+              </div>
+            </div>
+            <div class="eval-item" data-q="2.2 Could a beginning student start an exercise on their own?">
+              <p class="eval-q" id="q2-2">Could a beginning student start an exercise on their own?</p>
+              <div class="options" role="radiogroup" aria-labelledby="q2-2">
+                <label><input type="radio" name="a2-2" value="Yes"> Yes</label>
+                <label><input type="radio" name="a2-2" value="No"> No</label>
+                <label><input type="radio" name="a2-2" value="Not sure"> Not sure</label>
+              </div>
+            </div>
+            <div class="field" data-q="Notes: Ease of use">
+              <label for="n2">Notes on ease of use</label>
+              <textarea id="n2" name="n2"></textarea>
+            </div>
+          </fieldset>
+
+          <fieldset class="choice-item eval-area">
+            <legend>3. Feedback and reports</legend>
+            <div class="eval-item" data-q="3.1 Does it score each part of technique: angles, distance, speed, and aim?">
+              <p class="eval-q" id="q3-1">Does it score each part of technique: angles, distance, speed, and aim?</p>
+              <div class="options" role="radiogroup" aria-labelledby="q3-1">
+                <label><input type="radio" name="a3-1" value="Yes"> Yes</label>
+                <label><input type="radio" name="a3-1" value="No"> No</label>
+                <label><input type="radio" name="a3-1" value="Not sure"> Not sure</label>
+              </div>
+            </div>
+            <div class="eval-item" data-q="3.2 Does it show the acceptable range for each exercise?">
+              <p class="eval-q" id="q3-2">Does it show the acceptable range for each exercise?</p>
+              <div class="options" role="radiogroup" aria-labelledby="q3-2">
+                <label><input type="radio" name="a3-2" value="Yes"> Yes</label>
+                <label><input type="radio" name="a3-2" value="No"> No</label>
+                <label><input type="radio" name="a3-2" value="Not sure"> Not sure</label>
+              </div>
+            </div>
+            <div class="eval-item" data-q="3.3 Does it save a record of every attempt?">
+              <p class="eval-q" id="q3-3">Does it save a record of every attempt?</p>
+              <div class="options" role="radiogroup" aria-labelledby="q3-3">
+                <label><input type="radio" name="a3-3" value="Yes"> Yes</label>
+                <label><input type="radio" name="a3-3" value="No"> No</label>
+                <label><input type="radio" name="a3-3" value="Not sure"> Not sure</label>
+              </div>
+            </div>
+            <div class="field" data-q="Notes: Feedback and reports">
+              <label for="n3">Notes on feedback and reports</label>
+              <textarea id="n3" name="n3"></textarea>
+            </div>
+          </fieldset>
+
+          <fieldset class="choice-item eval-area">
+            <legend>4. Reading the feedback</legend>
+            <div class="eval-item" data-q="4.1 Is it clear which part of technique needs work?">
+              <p class="eval-q" id="q4-1">Is it clear which part of technique needs work?</p>
+              <div class="options" role="radiogroup" aria-labelledby="q4-1">
+                <label><input type="radio" name="a4-1" value="Yes"> Yes</label>
+                <label><input type="radio" name="a4-1" value="No"> No</label>
+                <label><input type="radio" name="a4-1" value="Not sure"> Not sure</label>
+              </div>
+            </div>
+            <div class="eval-item" data-q="4.2 Could you turn a report into one cue for a student?">
+              <p class="eval-q" id="q4-2">Could you turn a report into one cue for a student?</p>
+              <div class="options" role="radiogroup" aria-labelledby="q4-2">
+                <label><input type="radio" name="a4-2" value="Yes"> Yes</label>
+                <label><input type="radio" name="a4-2" value="No"> No</label>
+                <label><input type="radio" name="a4-2" value="Not sure"> Not sure</label>
+              </div>
+            </div>
+            <div class="field" data-q="Notes: Reading the feedback">
+              <label for="n4">Notes on reading the feedback</label>
+              <textarea id="n4" name="n4"></textarea>
+            </div>
+          </fieldset>
+
+          <fieldset class="choice-item eval-area">
+            <legend>5. Processes and positions</legend>
+            <div class="eval-item" data-q="5.1 Does it cover the processes you teach?">
+              <p class="eval-q" id="q5-1">Does it cover the processes you teach?</p>
+              <div class="options" role="radiogroup" aria-labelledby="q5-1">
+                <label><input type="radio" name="a5-1" value="Yes"> Yes</label>
+                <label><input type="radio" name="a5-1" value="No"> No</label>
+                <label><input type="radio" name="a5-1" value="Not sure"> Not sure</label>
+              </div>
+            </div>
+            <div class="eval-item" data-q="5.2 Does it cover the positions you teach?">
+              <p class="eval-q" id="q5-2">Does it cover the positions you teach?</p>
+              <div class="options" role="radiogroup" aria-labelledby="q5-2">
+                <label><input type="radio" name="a5-2" value="Yes"> Yes</label>
+                <label><input type="radio" name="a5-2" value="No"> No</label>
+                <label><input type="radio" name="a5-2" value="Not sure"> Not sure</label>
+              </div>
+            </div>
+            <div class="field" data-q="Notes: Processes and positions">
+              <label for="n5">Notes on processes and positions</label>
+              <textarea id="n5" name="n5"></textarea>
+            </div>
+          </fieldset>
+
+          <fieldset class="choice-item eval-area">
+            <legend>6. Carry-over to live welding</legend>
+            <div class="eval-item" data-q="6.1 Does the vendor offer evidence that skills carry over to live welding?">
+              <p class="eval-q" id="q6-1">Does the vendor offer evidence that skills carry over to live welding?</p>
+              <div class="options" role="radiogroup" aria-labelledby="q6-1">
+                <label><input type="radio" name="a6-1" value="Yes"> Yes</label>
+                <label><input type="radio" name="a6-1" value="No"> No</label>
+                <label><input type="radio" name="a6-1" value="Not sure"> Not sure</label>
+              </div>
+            </div>
+            <div class="eval-item" data-q="6.2 Does that evidence come from a study, rather than testimonials?">
+              <p class="eval-q" id="q6-2">Does that evidence come from a study, rather than testimonials?</p>
+              <div class="options" role="radiogroup" aria-labelledby="q6-2">
+                <label><input type="radio" name="a6-2" value="Yes"> Yes</label>
+                <label><input type="radio" name="a6-2" value="No"> No</label>
+                <label><input type="radio" name="a6-2" value="Not sure"> Not sure</label>
+              </div>
+            </div>
+            <div class="field" data-q="Notes: Carry-over to live welding">
+              <label for="n6">Notes on carry-over to live welding</label>
+              <textarea id="n6" name="n6"></textarea>
+            </div>
+          </fieldset>
+
+          <fieldset class="choice-item eval-area">
+            <legend>7. Cost</legend>
+            <div class="eval-item" data-q="7.1 Do you know the full cost: system, software, updates, and replacement parts?">
+              <p class="eval-q" id="q7-1">Do you know the full cost: system, software, updates, and replacement parts?</p>
+              <div class="options" role="radiogroup" aria-labelledby="q7-1">
+                <label><input type="radio" name="a7-1" value="Yes"> Yes</label>
+                <label><input type="radio" name="a7-1" value="No"> No</label>
+                <label><input type="radio" name="a7-1" value="Not sure"> Not sure</label>
+              </div>
+            </div>
+            <div class="eval-item" data-q="7.2 Would savings in steel offset the cost, and do you know over how long?">
+              <p class="eval-q" id="q7-2">Would savings in steel offset the cost, and do you know over how long?</p>
+              <div class="options" role="radiogroup" aria-labelledby="q7-2">
+                <label><input type="radio" name="a7-2" value="Yes"> Yes</label>
+                <label><input type="radio" name="a7-2" value="No"> No</label>
+                <label><input type="radio" name="a7-2" value="Not sure"> Not sure</label>
+              </div>
+            </div>
+            <div class="field" data-q="Notes: Cost">
+              <label for="n7">Notes on cost</label>
+              <textarea id="n7" name="n7"></textarea>
+            </div>
+          </fieldset>
+
+          <fieldset class="choice-item eval-area">
+            <legend>8. Technical support</legend>
+            <div class="eval-item" data-q="8.1 Does the vendor provide training for instructors?">
+              <p class="eval-q" id="q8-1">Does the vendor provide training for instructors?</p>
+              <div class="options" role="radiogroup" aria-labelledby="q8-1">
+                <label><input type="radio" name="a8-1" value="Yes"> Yes</label>
+                <label><input type="radio" name="a8-1" value="No"> No</label>
+                <label><input type="radio" name="a8-1" value="Not sure"> Not sure</label>
+              </div>
+            </div>
+            <div class="eval-item" data-q="8.2 Do you know who to call when it breaks, and how fast they respond?">
+              <p class="eval-q" id="q8-2">Do you know who to call when it breaks, and how fast they respond?</p>
+              <div class="options" role="radiogroup" aria-labelledby="q8-2">
+                <label><input type="radio" name="a8-2" value="Yes"> Yes</label>
+                <label><input type="radio" name="a8-2" value="No"> No</label>
+                <label><input type="radio" name="a8-2" value="Not sure"> Not sure</label>
+              </div>
+            </div>
+            <div class="field" data-q="Notes: Technical support">
+              <label for="n8">Notes on technical support</label>
+              <textarea id="n8" name="n8"></textarea>
+            </div>
+          </fieldset>
+
+          <h2>Part 2: Short report</h2>
+          <p>A few sentences each. Use what you found in the checklist.</p>
+          <div class="field" data-q="1. Does this system meet your operational goal? How?">
+            <label for="r1">1. Does this system meet your operational goal? How?</label>
+            <textarea id="r1" name="r1"></textarea>
+          </div>
+          <div class="field" data-q="2. Does it meet your instructional goal? How?">
+            <label for="r2">2. Does it meet your instructional goal? How?</label>
+            <textarea id="r2" name="r2"></textarea>
+          </div>
+          <div class="field" data-q="3. Its biggest strength for your program">
+            <label for="r3">3. Its biggest strength for your program</label>
+            <textarea id="r3" name="r3"></textarea>
+          </div>
+          <div class="field" data-q="4. Its biggest limitation for your program">
+            <label for="r4">4. Its biggest limitation for your program</label>
+            <textarea id="r4" name="r4"></textarea>
+          </div>
+
+          <h2>Recommendation</h2>
+          <fieldset class="choice-item" data-q="Recommendation">
+            <legend>What do you recommend?</legend>
+            <div class="options">
+                <label><input type="radio" name="rec" value="Adopt"> Adopt</label>
+                <label><input type="radio" name="rec" value="Pilot it first"> Pilot it first</label>
+                <label><input type="radio" name="rec" value="Don&rsquo;t adopt"> Don&rsquo;t adopt</label>
+            </div>
+          </fieldset>
+          <div class="field" data-q="In one sentence, why?">
+            <label for="rec-why">In one sentence, why?</label>
+            <textarea id="rec-why" name="rec-why"></textarea>
+          </div>
+
+          <div class="btn-row">
+            <button type="button" class="btn btn--sm" data-download>Download a copy (.txt)</button>
+            <button type="button" class="btn btn--ghost btn--sm" data-clear>Clear my answers</button>
+            <span class="save-status" aria-live="polite"></span>
+          </div>
+        </form>
+          </div>
+        </main>
+        <footer class="site-footer">
+            <div class="wrap">
+                <p><strong>Sim to Steel</strong></p>
+                <p>Rajiv Pillay &middot; MS Learning Experience Design and Educational Technology &middot; National University</p>
+                <p>EID 690 Capstone</p>
+                <p><a class="btn btn--ghost btn--sm" href="design-attribution.html">Attributions</a></p>
+            </div>
+        </footer>
+        <script src="assets/js/site.js"></script>
+        <script src="assets/js/activities.js"></script>
+    </body>
+</html>

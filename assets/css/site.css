@@ -893,3 +893,12 @@ ol.steps li::before {
     transform: translateY(-50%) rotate(45deg);
   }
 }
+
+/* AR System Evaluation */
+.eval-page form h2 { margin-top: 2.25rem; }
+.eval-area { margin-bottom: 1.25rem; }
+.eval-area legend { font-family: var(--font-display); font-size: 1.0625rem; }
+.eval-item { padding: .5rem 0 .65rem; border-bottom: 1px solid var(--border); }
+.eval-item:last-of-type { border-bottom: 0; }
+.eval-q { margin: 0; font-weight: 500; max-width: var(--measure); }
+.eval-area .field { margin-top: .75rem; }
