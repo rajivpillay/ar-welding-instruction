@@ -210,7 +210,7 @@
         <p>The report scores five parts of technique. Here&rsquo;s what each one controls in the weld.</p>
         <dl class="defs">
           <dt>Work angle</dt>
-          <dd>Work angle affects the evenness of the weld bead. If it&rsquo;s off, the weld comes out too flat or too steep.</dd>
+          <dd>Work angle affects the evenness of the weld bead. If it&rsquo;s off, the weld comes out too flat or too steep. On a fillet weld, look for unequal legs or undercut on one side.</dd>
           <dt>Travel angle</dt>
           <dd>Travel angle affects the consistency of the weld bead. Holding the right travel angle makes sure the electrode melts into the base material properly.</dd>
           <dt>Contact-tip-to-work distance (CTWD)</dt>
@@ -274,6 +274,13 @@
         </section>
 
         <h2 id="t3">Acceptable ranges, and how they shift with joint and position</h2>
+        <p>When a student changes welding positions, more than their body position changes. The welding parameters change too: travel angle, travel speed, and machine settings. That&rsquo;s why &ldquo;out of range&rdquo; only means something for a specific joint and position.</p>
+
+        <figure class="shot">
+          <img src="images/augmentedarc-work-stand-4f.jpg" width="1400" height="852" loading="lazy"
+               alt="A trainee stands beside an AugmentedArc work stand. A patterned practice piece is clamped to a horizontal bar above head height, set up for an overhead fillet weld. A label reads 4F.">
+          <figcaption>The work stand holds the practice piece in other positions, here 4F overhead. Still from Miller Electric&rsquo;s &ldquo;AugmentedArc Work Stand Assembly&rdquo; video.</figcaption>
+        </figure>
 
         <figure class="video">
           <div class="video-frame">
@@ -295,7 +302,92 @@
           <p><span class="ts">1:14</span> Review the exercise details and press OK. For more information on AugmentedArc, visit millerwelds.com.</p>
         </details>
 
-        <p><strong>Placeholder.</strong> Lesson text in development.</p>
+        <h3>Where the ranges come from</h3>
+        <p>Most welding instructors post acceptable ranges for each exercise: the best travel angle, the travel speed, and the recommended machine settings. An AR simulator does the same thing. Each exercise has a setup screen that lists a minimum, a target, and a maximum for every parameter.</p>
+
+        <figure class="shot">
+          <img src="images/augmentedarc-exercise-setup-2f.jpg" width="1200" height="880" loading="lazy"
+               alt="AugmentedArc exercise overview for an open exercise: T-joint, 2F position, carbon steel, 1/8 inch. Process GMAW, filler ER70S-6, .030 inch diameter, argon-CO2 gas, weave pattern straight. A table gives minimum, target, and maximum for each parameter, listed in full in the table below.">
+          <figcaption>The setup screen for a 2F T-joint exercise. Still from Miller Electric&rsquo;s &ldquo;AugmentedArc Exercise Selection&rdquo; video.</figcaption>
+        </figure>
+
+        <div class="table-scroll" tabindex="0" role="region" aria-label="Acceptable ranges for this exercise (table)">
+          <table class="ranges">
+            <caption>Acceptable ranges for this exercise: T-joint, 2F, carbon steel, 1/8 in., GMAW</caption>
+            <thead><tr><th scope="col">Parameter</th><th scope="col">Min</th><th scope="col">Target</th><th scope="col">Max</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">CTWD (in.)</th><td>0.46</td><td>0.71</td><td>0.96</td></tr>
+              <tr><th scope="row">Travel speed (in/min)</th><td>2.0</td><td>8.0</td><td>14.0</td></tr>
+              <tr><th scope="row">Work angle (&deg;)</th><td>30</td><td>45</td><td>60</td></tr>
+              <tr><th scope="row">Travel angle (&deg;)</th><td>5</td><td>20 (push)</td><td>35</td></tr>
+              <tr><th scope="row">Voltage (V)</th><td>16.0</td><td>18.0</td><td>20.0</td></tr>
+              <tr><th scope="row">Wire feed speed (in/min)</th><td>335</td><td>355</td><td>375</td></tr>
+              <tr><th scope="row">Gas (CFH)</th><td>20</td><td>30</td><td>40</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Check the ranges before you read the report</h3>
+        <p>Before you read a student&rsquo;s report, look at the ranges for that exercise. A reading only means something next to the range for the joint and position the student welded.</p>
+        <p>Use the ranges on the setup screen. The numbers along the graphs on the report aren&rsquo;t always the same, so don&rsquo;t read the range from the graph.</p>
+
+        <section class="activity" aria-labelledby="u2t3-act">
+          <p class="kicker">Try it</p>
+          <h3 id="u2t3-act">Read it against the range</h3>
+          <p>Example readings from one student&rsquo;s 2F exercise. They&rsquo;re made up for practice, not from a real session. Compare each one with the table above.</p>
+          <div data-choice-set>
+            <fieldset class="choice-item" data-answer="in" data-explain="52&deg; is inside 30&ndash;60&deg;.">
+              <legend>Work angle: average 52&deg;</legend>
+              <div class="options">
+                <label><input type="radio" name="u2t3-1" value="below"> Below range</label>
+                <label><input type="radio" name="u2t3-1" value="in"> In range</label>
+                <label><input type="radio" name="u2t3-1" value="above"> Above range</label>
+              </div>
+              <p class="fb" aria-live="polite"></p>
+            </fieldset>
+            <fieldset class="choice-item" data-answer="above" data-explain="38&deg; is above the 35&deg; maximum.">
+              <legend>Travel angle: average 38&deg;</legend>
+              <div class="options">
+                <label><input type="radio" name="u2t3-2" value="below"> Below range</label>
+                <label><input type="radio" name="u2t3-2" value="in"> In range</label>
+                <label><input type="radio" name="u2t3-2" value="above"> Above range</label>
+              </div>
+              <p class="fb" aria-live="polite"></p>
+            </fieldset>
+            <fieldset class="choice-item" data-answer="below" data-explain="0.42 in. is below the 0.46 in. minimum.">
+              <legend>CTWD: average 0.42 in.</legend>
+              <div class="options">
+                <label><input type="radio" name="u2t3-3" value="below"> Below range</label>
+                <label><input type="radio" name="u2t3-3" value="in"> In range</label>
+                <label><input type="radio" name="u2t3-3" value="above"> Above range</label>
+              </div>
+              <p class="fb" aria-live="polite"></p>
+            </fieldset>
+            <fieldset class="choice-item" data-answer="in" data-explain="9.5 in/min is inside 2.0&ndash;14.0 in/min.">
+              <legend>Travel speed: average 9.5 in/min</legend>
+              <div class="options">
+                <label><input type="radio" name="u2t3-4" value="below"> Below range</label>
+                <label><input type="radio" name="u2t3-4" value="in"> In range</label>
+                <label><input type="radio" name="u2t3-4" value="above"> Above range</label>
+              </div>
+              <p class="fb" aria-live="polite"></p>
+            </fieldset>
+            <fieldset class="choice-item" data-answer="in" data-explain="18.4 V is inside 16.0&ndash;20.0 V.">
+              <legend>Voltage: 18.4 V</legend>
+              <div class="options">
+                <label><input type="radio" name="u2t3-5" value="below"> Below range</label>
+                <label><input type="radio" name="u2t3-5" value="in"> In range</label>
+                <label><input type="radio" name="u2t3-5" value="above"> Above range</label>
+              </div>
+              <p class="fb" aria-live="polite"></p>
+            </fieldset>
+            <div class="btn-row">
+              <button type="button" class="btn btn--sm" data-check>Check my answers</button>
+              <button type="button" class="btn btn--ghost btn--sm" data-reset>Start over</button>
+            </div>
+            <p class="result" aria-live="polite"></p>
+          </div>
+        </section>
 
         <h2 id="t4">Reading a full report</h2>
 
