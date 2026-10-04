@@ -929,3 +929,9 @@ form.quiz fieldset[disabled] .options label { cursor: default; }
 .jump ol { margin: 0; padding-left: 1.25rem; }
 .jump li { margin: .2rem 0; }
 :target { scroll-margin-top: 5.5rem; }
+
+/* Definition list for technical terms */
+dl.defs { margin: 0 0 1.5rem; max-width: var(--measure); }
+dl.defs dt { font-family: var(--font-display); font-weight: 600; margin-top: .9rem; }
+dl.defs dd { margin: .2rem 0 0; }
+.hotspot-panel h4 { margin: 0 0 .35rem; font-size: 1.0625rem; }
