@@ -81,9 +81,59 @@
           <p>Given a sample AR simulator performance report, interpret the feedback data and provide constructive input to the welding student, identifying the indicator outside the acceptable range and recommending one specific technique modification.</p>
         </div>
 
-        <p><strong>Placeholder.</strong> Content for this part is in development.</p>
-
         <p>Five questions before the lessons begin. This isn&rsquo;t graded. It shows what you already know, so you can see what you learn. You&rsquo;ll see your score, but not the answers. Questions like these come back in the Knowledge Check.</p>
+
+        <form class="quiz" data-quiz="unit-2-pre" data-mode="score-only">
+          <fieldset class="choice-item mcq" data-answer="c">
+            <legend>1. Which of these does the student see <em>during</em> the weld?</legend>
+            <div class="options">
+                <label><input type="radio" name="pq1" value="a"> A score for each parameter</label>
+                <label><input type="radio" name="pq1" value="b"> A replay of the weld</label>
+                <label><input type="radio" name="pq1" value="c"> Guides turning red and green</label>
+                <label><input type="radio" name="pq1" value="d"> The attempt&rsquo;s pass or fail mark</label>
+            </div>
+          </fieldset>
+          <fieldset class="choice-item mcq" data-answer="b">
+            <legend>2. Travel speed mainly controls:</legend>
+            <div class="options">
+                <label><input type="radio" name="pq2" value="a"> Arc length</label>
+                <label><input type="radio" name="pq2" value="b"> Heat input</label>
+                <label><input type="radio" name="pq2" value="c"> Where the wire points</label>
+                <label><input type="radio" name="pq2" value="d"> The machine&rsquo;s voltage</label>
+            </div>
+          </fieldset>
+          <fieldset class="choice-item mcq" data-answer="b">
+            <legend>3. Where should you get the acceptable range for a reading?</legend>
+            <div class="options">
+                <label><input type="radio" name="pq3" value="a"> The numbers along the report&rsquo;s graph</label>
+                <label><input type="radio" name="pq3" value="b"> The exercise&rsquo;s setup screen</label>
+                <label><input type="radio" name="pq3" value="c"> The overall target score</label>
+                <label><input type="radio" name="pq3" value="d"> One range that works for every position</label>
+            </div>
+          </fieldset>
+          <fieldset class="choice-item mcq" data-answer="c">
+            <legend>4. A report shows an overall score of 94 against a target of 90, and aim scored 85 in red. What&rsquo;s the most accurate reading?</legend>
+            <div class="options">
+                <label><input type="radio" name="pq4" value="a"> Passed, nothing to address</label>
+                <label><input type="radio" name="pq4" value="b"> Failed, because aim is red</label>
+                <label><input type="radio" name="pq4" value="c"> Passed, but aim needs attention</label>
+                <label><input type="radio" name="pq4" value="d"> You can&rsquo;t tell without the replay</label>
+            </div>
+          </fieldset>
+          <fieldset class="choice-item mcq" data-answer="c">
+            <legend>5. Which cue best helps a student whose CTWD runs long?</legend>
+            <div class="options">
+                <label><input type="radio" name="pq5" value="a"> &ldquo;Your CTWD averaged 0.9 inches.&rdquo;</label>
+                <label><input type="radio" name="pq5" value="b"> &ldquo;Watch your numbers next time.&rdquo;</label>
+                <label><input type="radio" name="pq5" value="c"> &ldquo;Do a dry run to feel the right distance, then check it halfway through.&rdquo;</label>
+                <label><input type="radio" name="pq5" value="d"> &ldquo;Your CTWD score was 82.&rdquo;</label>
+            </div>
+          </fieldset>
+          <div class="btn-row">
+            <button type="submit" class="btn btn--sm">See my score</button>
+          </div>
+          <p class="result" aria-live="polite"></p>
+        </form>
 
       <div class="part-foot">
         <a class="btn btn--ghost btn--sm" href="unit-2.html">← Overview</a>
@@ -103,5 +153,6 @@
             </div>
         </footer>
         <script src="assets/js/site.js"></script>
+        <script src="assets/js/activities.js"></script>
     </body>
 </html>
