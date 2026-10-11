@@ -937,3 +937,113 @@ dl.defs dd { margin: .2rem 0 0; }
 .hotspot-panel h4 { margin: 0 0 .35rem; font-size: 1.0625rem; }
 
 .reveal-panel h4 { margin: 0 0 .5rem; }
+
+/* ---------- Glossary: in-text definitions (D-025) ---------- */
+.term-link, .term-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: -.25rem 0 -.25rem .1rem;
+  padding: 0;
+  vertical-align: middle;
+  background: transparent;
+  border: 0;
+  border-radius: 50%;
+  color: var(--accent);
+  text-decoration: none;
+  cursor: pointer;
+}
+.term-link::before, .term-btn::before, .term-icon-demo {
+  content: "i";
+  content: "i" / "";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1rem;
+  height: 1rem;
+  border: 1.5px solid currentColor;
+  border-radius: 50%;
+  font: 700 .6875rem/1 var(--font-display);
+  color: var(--accent);
+  box-sizing: border-box;
+}
+.term-icon-demo::before { content: "i"; content: "i" / ""; }
+.term-icon-demo { vertical-align: middle; margin: 0 .15rem; }
+.term-btn:hover::before, .term-btn[aria-expanded="true"]::before {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-accent);
+}
+.term-link:focus-visible, .term-btn:focus-visible { outline: 3px solid var(--focus); outline-offset: 1px; }
+.term-wrap { position: relative; white-space: nowrap; }
+.term-pop {
+  position: absolute;
+  top: calc(100% + .35rem);
+  left: 0;
+  z-index: 30;
+  display: block;
+  width: min(20rem, calc(100vw - 32px));
+  padding: .75rem .9rem;
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  font-size: .9375rem;
+  line-height: 1.5;
+  font-weight: 400;
+  white-space: normal;
+  text-align: left;
+}
+.term-pop[hidden] { display: none; }
+.term-pop__head { display: block; margin-bottom: .3rem; }
+.term-pop__head strong { font-family: var(--font-display); color: var(--heading); }
+.term-pop__def { display: block; }
+.term-pop__more { display: inline-block; margin-top: .45rem; font-size: .875rem; }
+.tag {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: .6875rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  padding: .05rem .45rem;
+  vertical-align: middle;
+}
+.term-hint { font-size: .875rem; color: var(--muted); margin-top: -1.25rem; margin-bottom: 2rem; }
+
+/* Glossary page */
+dl.glossary { max-width: var(--measure); margin: 1.5rem 0 2rem; }
+.glossary-entry { padding: .9rem 0; border-bottom: 1px solid var(--border); }
+.glossary-entry dt { font-family: var(--font-display); font-weight: 600; color: var(--heading); margin-bottom: .25rem; }
+.glossary-entry dd { margin: 0; }
+.glossary-entry:target { background: var(--surface); outline: 2px solid var(--accent); outline-offset: 4px; }
+
+/* Video summaries (D-025) */
+.video-summary {
+  border-left: 3px solid var(--accent);
+  background: var(--surface);
+  padding: .75rem 1rem;
+  margin: 0 0 1rem;
+  max-width: var(--measure);
+}
+.video-summary p { margin: 0; }
+.video-summary__label {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: .8125rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: .25rem !important;
+}
+
+/* Unit Task rubric (D-024) */
+table.rubric th[scope="row"] { text-transform: none; letter-spacing: 0; font-size: .9375rem; color: var(--heading); }
+table.rubric td, table.rubric th { vertical-align: top; }
+table.rubric { min-width: 40rem; }
