@@ -99,4 +99,29 @@
       apply(next);
     });
   }
+
+  /* ---- Worked-example dialogs (D-026) ----
+     Native modal <dialog>: the page behind is inert while it is open.
+     Escape, either Close button, or a click on the backdrop closes it,
+     and focus returns to the button that opened it. */
+  var dlgOpeners = document.querySelectorAll('[data-dialog]');
+  for (var d = 0; d < dlgOpeners.length; d++) {
+    (function (opener) {
+      var dlg = document.getElementById(opener.getAttribute('data-dialog'));
+      if (!dlg || typeof dlg.showModal !== 'function') return;
+      opener.addEventListener('click', function () {
+        dlg.showModal();
+        document.documentElement.classList.add('dialog-open');
+      });
+      dlg.addEventListener('close', function () {
+        document.documentElement.classList.remove('dialog-open');
+        opener.focus();
+      });
+      dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
+      var closers = dlg.querySelectorAll('[data-dialog-close]');
+      for (var c = 0; c < closers.length; c++) {
+        closers[c].addEventListener('click', function () { dlg.close(); });
+      }
+    })(dlgOpeners[d]);
+  }
 })();

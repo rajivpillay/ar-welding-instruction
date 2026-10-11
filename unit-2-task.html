@@ -81,10 +81,6 @@
           <p>Given a sample AR simulator performance report, interpret the feedback data and provide constructive input to the welding student, identifying the indicator outside the acceptable range and recommending one specific technique modification.</p>
         </div>
 
-        <div class="note">
-          <p><strong>In development:</strong> a worked example to compare against. The task and rubric are ready to use.</p>
-        </div>
-
         <h2>What you&rsquo;ll do</h2>
         <p>Read a sample simulator report. Name the indicator that is outside the acceptable range, and write the one technique change you would recommend to the student.</p>
 
@@ -104,6 +100,7 @@
             </tbody>
           </table>
         </div>
+        <p class="example-open"><button type="button" class="btn btn--ghost btn--sm" data-dialog="u2-example" aria-haspopup="dialog">See a worked example</button> It opens over this page. Close it before you start your own work.</p>
 
         <h2>Your work</h2>
         <p>Use the sample report below, or a report from a system you have access to. Your answers save in this browser, and you can download a copy.</p>
@@ -165,6 +162,49 @@
         <span class="spacer"></span>
         <a class="btn" href="unit-2-summary.html">Summary →</a>
       </div>
+
+        <dialog class="example-dialog" id="u2-example" aria-labelledby="u2-example-title">
+          <div class="example-dialog__inner">
+            <div class="example-dialog__head">
+              <h2 id="u2-example-title">Worked example: Unit 2 Task</h2>
+              <button type="button" class="btn btn--ghost btn--sm" data-dialog-close>Close</button>
+            </div>
+            <p class="example-dialog__intro">This example uses a different report from the one in your task. Use it to see what complete answers look like, then close it and write your own.</p>
+            <h3>The report</h3>
+            <p>Exercise: T-joint, 2F, carbon steel, 1/8 in., GMAW. Technique score 91 against a target of 90: passed. Made up for practice.</p>
+            <div class="table-scroll" tabindex="0" role="region" aria-label="Example report (table)">
+              <table>
+                <caption>Example report, one attempt</caption>
+                <thead><tr><th scope="col">Parameter</th><th scope="col">Range (setup screen)</th><th scope="col">Average</th><th scope="col">Score</th><th scope="col">Notes</th></tr></thead>
+                <tbody>
+                  <tr><th scope="row">Work angle (&deg;)</th><td>30 &ndash; 60</td><td>38</td><td>81</td><td>Red. The line drops below 30 through the middle third of the weld.</td></tr>
+                  <tr><th scope="row">Travel angle (&deg;)</th><td>5 &ndash; 35</td><td>18</td><td>95</td><td></td></tr>
+                  <tr><th scope="row">CTWD (in.)</th><td>0.46 &ndash; 0.96</td><td>0.70</td><td>97</td><td></td></tr>
+                  <tr><th scope="row">Travel speed (in/min)</th><td>2.0 &ndash; 14.0</td><td>7.6</td><td>96</td><td></td></tr>
+                  <tr><th scope="row">Aim (in.)</th><td>&minus;0.25 &ndash; 0.25</td><td>&minus;0.04</td><td>98</td><td></td></tr>
+                  <tr><th scope="row">Voltage (V)</th><td>16.0 &ndash; 20.0</td><td>18.0</td><td>100</td><td>Machine setting</td></tr>
+                  <tr><th scope="row">Wire feed speed (in/min)</th><td>335 &ndash; 375</td><td>355</td><td>100</td><td>Machine setting</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3>1. Which indicator is outside the acceptable range?</h3>
+            <p class="answer">Work angle. Its line drops below the 30&deg; minimum on the setup screen. Every other parameter stays in range.</p>
+            <p class="why"><span class="why__score">Rubric: The indicator, 2.</span> It names the one indicator outside the range and judges it against the setup screen, not the graph.</p>
+
+            <h3>2. What does the reading show?</h3>
+            <p class="answer">The average, 38&deg;, is inside the 30&ndash;60&deg; range, but the line drops below 30&deg; through the middle third of the weld and then recovers. The student sets the angle correctly at the start and loses it partway through.</p>
+            <p class="why"><span class="why__score">Rubric: The reading, 2.</span> It says what the line does and where along the weld. &ldquo;Work angle averaged 38&deg; and scored 81&rdquo; would score 1: it gives only the average and the score.</p>
+
+            <h3>3. What one technique change would you recommend?</h3>
+            <p class="answer">&ldquo;Your work angle is dropping in the middle of the weld. Set the gun at 45 degrees, then do a dry run along the whole joint and watch that the angle holds as you pass the middle. On the next weld, check your wrist when you reach the halfway point.&rdquo;</p>
+            <p class="why"><span class="why__score">Rubric: The cue, 2.</span> It names one change (work angle), says what to do rather than reading the number aloud, and gives the student two ways to check themselves: the dry run and the halfway check.</p>
+
+            <div class="example-dialog__foot">
+              <button type="button" class="btn btn--sm" data-dialog-close>Close and start my work</button>
+            </div>
+          </div>
+        </dialog>
       </main>
 </div>
 
