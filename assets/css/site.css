@@ -1094,3 +1094,19 @@ html.dialog-open { overflow: hidden; }
 .example-dialog__foot { margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border); }
 .example-dialog .table-scroll > table { min-width: 34rem; }
 @media (max-width: 46rem) { .example-dialog__inner { padding: 0 1rem 1rem; } }
+
+/* Usability study: participant code field */
+.field input[type="text"] {
+  font: inherit;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  padding: .5rem .75rem;
+  min-height: 44px;
+  width: 8rem;
+  margin-right: .5rem;
+}
+.field input[type="text"]:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.study-code .btn-row { margin: 0 0 1rem; display: flex; flex-wrap: wrap; gap: .75rem; align-items: center; }
+[data-study][hidden] { display: none; }

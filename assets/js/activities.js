@@ -122,8 +122,7 @@
     });
     form.addEventListener('submit', function (e) { e.preventDefault(); });
 
-    var dl = form.querySelector('[data-download]');
-    if (dl) dl.addEventListener('click', function () {
+    function asText() {
       var lines = [form.getAttribute('data-title') || 'My answers', ''];
       $all('[data-q]', form).forEach(function (q) {
         lines.push(q.getAttribute('data-q'));
@@ -133,12 +132,31 @@
         $all('textarea', q).forEach(function (el) { lines.push((hasRadios ? 'Notes: ' : 'Answer: ') + (el.value || '(blank)')); });
         lines.push('');
       });
-      var blob = new Blob([lines.join('\n')], { type: 'text/plain' });
+      return lines.join('\n');
+    }
+    var dl = form.querySelector('[data-download]');
+    if (dl) dl.addEventListener('click', function () {
+      var blob = new Blob([asText()], { type: 'text/plain' });
       var a = document.createElement('a');
       a.href = URL.createObjectURL(blob);
       a.download = (form.getAttribute('data-autosave') || 'answers') + '.txt';
       document.body.appendChild(a); a.click(); a.remove();
       setTimeout(function () { URL.revokeObjectURL(a.href); }, 1000);
+    });
+    /* Copy my work: same text as the download, to the clipboard */
+    var cp = form.querySelector('[data-copy]');
+    if (cp) cp.addEventListener('click', function () {
+      var text = asText();
+      function done(ok) { status.textContent = ok ? 'Copied. You can paste it into the survey.' : 'Could not copy here. Use Download a copy instead.'; }
+      function fallback() {
+        var ta = document.createElement('textarea');
+        ta.value = text; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.opacity = '0';
+        document.body.appendChild(ta); ta.select();
+        var ok = false; try { ok = document.execCommand('copy'); } catch (e) {}
+        ta.remove(); cp.focus(); done(ok);
+      }
+      if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(text).then(function () { done(true); }, fallback);
+      else fallback();
     });
     var clr = form.querySelector('[data-clear]');
     if (clr) clr.addEventListener('click', function () {
@@ -268,10 +286,13 @@
       });
       var all = readScores(), first = all[id];
       if (!first) {
-        first = { score: score, total: items.length, date: new Date().toISOString().slice(0, 10), attempt: 1 };
+        first = { score: score, total: items.length, date: new Date().toISOString().slice(0, 10), attempt: 1, attempts: 1 };
         if (mirror) first.mirror = mirrorScore;
         all[id] = first; writeScores(all);
-      } else { first = Object.assign({}, first, { attempt: 2 }); }
+      } else {
+        all[id].attempts = (all[id].attempts || 1) + 1; writeScores(all);   /* every submit counts; the score saved stays the first */
+        first = Object.assign({}, first, { attempt: 2 });
+      }
       setLocked(true);
       if (mode === 'score-only') scoreOnlyMessage(all[id]); else feedbackMessage(score, mirrorScore, first.attempt === 1 ? null : first);
       result.setAttribute('tabindex', '-1'); result.focus();
