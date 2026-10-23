@@ -7,6 +7,21 @@
 (function () {
   'use strict';
   var TERMS = {
+  "g-anchor-standard": {
+    "term": "Anchor standard",
+    "tag": "CTE standards term",
+    "def": "One of eleven standards shared by all fifteen industry sectors in the California CTE Model Curriculum Standards, such as 6.0 Health and Safety. Each has numbered performance indicators."
+  },
+  "g-performance-indicator": {
+    "term": "Performance indicator",
+    "tag": "CTE standards term",
+    "def": "A numbered item under a standard that says what a student should be able to do, such as C2.3 under pathway standard C2.0. The rows of the Unit 3 Alignment Table are performance indicators."
+  },
+  "g-reorientation": {
+    "term": "Re-orientation phase",
+    "tag": "Course term",
+    "def": "The first live sessions after simulator practice, typically one to three, while a student gets used to heat, spatter, noise, and smoke. Performance can dip at first, before the practiced movements carry over."
+  },
   "g-attempt": {
     "term": "Attempt",
     "tag": "Miller term",

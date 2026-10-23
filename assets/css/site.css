@@ -1110,3 +1110,28 @@ html.dialog-open { overflow: hidden; }
 .field input[type="text"]:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
 .study-code .btn-row { margin: 0 0 1rem; display: flex; flex-wrap: wrap; gap: .75rem; align-items: center; }
 [data-study][hidden] { display: none; }
+
+/* ---------- Unit 3 Alignment Table (rows as cards) ---------- */
+.align-row { border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.25rem; background: var(--bg); }
+.align-row > legend { padding: 0 .35rem; }
+.std-text {
+  max-width: var(--measure);
+  margin: .25rem 0 .75rem;
+  padding: .6rem .85rem;
+  background: var(--surface);
+  border-left: 3px solid var(--border-strong);
+}
+.haz-set { border: 0; margin: .75rem 0 0; padding: 0; min-width: 0; }
+.haz-set > legend { font-weight: 600; font-family: var(--font-body); font-size: 1rem; padding: 0; margin-bottom: .25rem; }
+.table-check { margin-top: .75rem; max-width: var(--measure); }
+.table-check ul { margin-top: .25rem; }
+blockquote.std-text { margin-inline: 0; }
+blockquote.std-text p { margin: 0; }
+.own-rows { margin: 1.25rem 0; border: 1px solid var(--border); border-radius: var(--radius); padding: .75rem 1.25rem; }
+.own-rows > summary { cursor: pointer; font-weight: 600; min-height: 44px; display: flex; align-items: center; }
+.own-rows > summary:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.own-rows[open] > summary { margin-bottom: .5rem; }
+.compare-wrap { margin-top: 1rem; max-width: var(--measure); }
+.plan-sec { border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.25rem; }
+.plan-sec > legend { padding: 0 .35rem; }
+.plan-check { margin-top: .75rem; max-width: var(--measure); }

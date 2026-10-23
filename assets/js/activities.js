@@ -94,7 +94,7 @@
     function collect() {
       var o = {};
       $all('input, textarea', form).forEach(function (el) {
-        if (el.type === 'radio') { if (el.checked) o[el.name] = el.value; }
+        if (el.type === 'radio' || el.type === 'checkbox') { if (el.checked) o[el.name] = el.value; }
         else if (el.name) { o[el.name] = el.value; }
       });
       return o;
@@ -102,7 +102,7 @@
     var saved = read();
     $all('input, textarea', form).forEach(function (el) {
       if (!(el.name in saved)) return;
-      if (el.type === 'radio') el.checked = (saved[el.name] === el.value);
+      if (el.type === 'radio' || el.type === 'checkbox') el.checked = (saved[el.name] === el.value);
       else el.value = saved[el.name];
     });
     if (Object.keys(saved).length) status.textContent = 'Restored your saved answers from this browser.';
@@ -126,6 +126,12 @@
       var lines = [form.getAttribute('data-title') || 'My answers', ''];
       $all('[data-q]', form).forEach(function (q) {
         lines.push(q.getAttribute('data-q'));
+        var boxes = $all('input[type="checkbox"]', q);
+        if (boxes.length) {
+          var ticked = boxes.filter(function (b) { return b.checked; }).map(function (b) { return b.value; });
+          lines.push('Selected: ' + (ticked.length ? ticked.join('; ') : '(none)'));
+          lines.push(''); return;
+        }
         var picked = q.querySelector('input:checked');
         if (q.querySelector('input[type="radio"]')) lines.push('Answer: ' + (picked ? picked.value : '(none)'));
         var hasRadios = !!q.querySelector('input[type="radio"]');
@@ -158,6 +164,41 @@
       if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(text).then(function () { done(true); }, fallback);
       else fallback();
     });
+    /* Check my table (Unit 3 Alignment Table): lists rows still incomplete */
+    var chk = form.querySelector('[data-check-table]');
+    var chkOut = form.querySelector('.table-check');
+    if (chk && chkOut) chk.addEventListener('click', function () {
+      var rows = $all('.align-row', form).filter(function (row) {
+        if (!row.hasAttribute('data-optional')) return true;
+        var std = row.querySelector('textarea[name$="-std"]');
+        return std && std.value.trim();               /* optional rows count only once started */
+      });
+      var gaps = [], firstGap = null;
+      rows.forEach(function (row, i) {
+        var miss = [];
+        var rate = row.querySelector('input[name$="-rate"]:checked');
+        var part = row.querySelector('textarea[name$="-part"]');
+        var why = row.querySelector('textarea[name$="-why"]');
+        var safe = row.querySelector('input[name$="-safe"]:checked');
+        var haz = $all('input[type="checkbox"]:checked', row);
+        if (!rate) miss.push({ t: 'a rating', el: row.querySelector('input[name$="-rate"]') });
+        if (rate && rate.value === 'Partially supported' && !part.value.trim()) miss.push({ t: 'the part the simulator covers', el: part });
+        if (!why.value.trim()) miss.push({ t: 'a reason', el: why });
+        if (!safe) miss.push({ t: 'a safety answer', el: row.querySelector('input[name$="-safe"]') });
+        if (safe && safe.value === 'Yes' && !haz.length) miss.push({ t: 'the hazards', el: row.querySelector('input[type="checkbox"]') });
+        if (miss.length) {
+          if (!firstGap) firstGap = miss[0].el;
+          gaps.push('<li>Row ' + (i + 1) + ' (' + esc(row.getAttribute('data-row')) + '): ' + miss.map(function (m) { return m.t; }).join(', ') + '</li>');
+        }
+      });
+      chkOut.innerHTML = gaps.length
+        ? '<p><strong>' + gaps.length + ' of ' + rows.length + ' rows still need something.</strong></p><ul>' + gaps.join('') + '</ul>'
+        : '<p><strong>All ' + rows.length + ' rows are complete.</strong> Now score your table with the rubric.</p>';
+      var cmp = form.querySelector('[data-compare-wrap]');
+      if (cmp) cmp.hidden = !!gaps.length;             /* course ratings offered only once the table is complete */
+      if (firstGap) firstGap.focus();
+    });
+
     var clr = form.querySelector('[data-clear]');
     if (clr) clr.addEventListener('click', function () {
       form.reset();
