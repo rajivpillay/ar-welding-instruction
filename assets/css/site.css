@@ -1135,3 +1135,23 @@ blockquote.std-text p { margin: 0; }
 .plan-sec { border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.25rem; }
 .plan-sec > legend { padding: 0 .35rem; }
 .plan-check { margin-top: .75rem; max-width: var(--measure); }
+
+/* ---- PM6 finalization (2026-10-25) ---- */
+/* Narrow figure, for graphics that don't need the full measure */
+figure.shot.shot--narrow { max-width: 36rem; }
+
+/* Introduction: text with a column of photos on the right; photos follow the text on small screens */
+.intro-layout { display: grid; gap: 2rem; }
+.intro-media { display: grid; gap: 1rem; align-content: start; }
+.intro-media figure.shot { margin: 0; }
+.intro-media .credit { font-size: .875rem; color: var(--muted); margin: 0; }
+@media (min-width: 58rem) {
+  .intro-layout { grid-template-columns: minmax(0, 1fr) minmax(0, 24rem); gap: 2.5rem; align-items: start; }
+}
+
+/* Hotspot question: the panel carries the feedback state */
+.hotspot-panel.fb { font-size: 1rem; }
+.hotspot-panel.fb p { margin: 0; }
+
+/* Syllabus */
+.syllabus-units { margin-bottom: 1.5rem; }

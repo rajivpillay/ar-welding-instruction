@@ -7,6 +7,21 @@
 (function () {
   'use strict';
   var TERMS = {
+  "g-joint-geometry": {
+    "term": "Joint geometry",
+    "tag": "Welding term",
+    "def": "The shape and dimensions of a joint in cross section before welding, such as the groove angle, root opening, and root face. A code or WPS specifies it. On the simulator, it is preset with the joint type."
+  },
+  "g-tack-weld": {
+    "term": "Tack weld",
+    "tag": "Welding term",
+    "def": "A short weld that holds the parts in position and alignment until the final weld is made. Tacking is live preparation; the simulator presents the joint ready to weld."
+  },
+  "g-wps": {
+    "term": "Welding procedure specification (WPS)",
+    "tag": "Welding term",
+    "def": "A written document that gives the variables for making a specific weld so it can be repeated, such as the process, base and filler metal, joint design, position, and electrical settings. The simulator’s exercise setup screen works in a similar way (Unit 3)."
+  },
   "g-anchor-standard": {
     "term": "Anchor standard",
     "tag": "CTE standards term",

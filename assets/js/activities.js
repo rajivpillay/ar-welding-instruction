@@ -26,6 +26,23 @@
     });
   });
 
+  /* ---- Hotspot question: each marker is an answer choice with its own feedback ---- */
+  $all('[data-hotspot-quiz]').forEach(function (box) {
+    var panel = box.querySelector('.hotspot-panel');
+    var btns = $all('.hotspot', box);
+    btns.forEach(function (b) {
+      b.setAttribute('aria-pressed', 'false');
+      b.addEventListener('click', function () {
+        var src = document.getElementById(b.getAttribute('data-info'));
+        var ok = b.hasAttribute('data-correct');
+        btns.forEach(function (o) { o.setAttribute('aria-pressed', 'false'); });
+        b.setAttribute('aria-pressed', 'true');
+        panel.className = 'hotspot-panel fb ' + (ok ? 'is-ok' : 'is-bad');
+        panel.innerHTML = '<p>' + mark(ok) + (src ? src.innerHTML : '') + '</p>';
+      });
+    });
+  });
+
   /* ---- Choice sets: one radio group per item, checked together ---- */
   $all('[data-choice-set]').forEach(function (set) {
     var items = $all('fieldset[data-answer]', set);

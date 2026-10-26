@@ -133,7 +133,7 @@
 (function () {
   'use strict';
   var STUDY = {
-    on: true,
+    on: false,
     /* Pre-filled link templates, from the "Links" tab of the response spreadsheet */
     forms: {
       start: 'https://docs.google.com/forms/d/e/1FAIpQLSeBC5ZKn5McUK-_FOa5JfZB_xG2s8bmA_oDOoBTE4iyhaw90w/viewform?usp=pp_url&entry.587827526=P00',
