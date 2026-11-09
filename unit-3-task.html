@@ -46,9 +46,6 @@
                         <li>
                             <a href="planning-tools.html">Planning Tools</a>
                         </li>
-                        <li>
-                            <a href="calendar.html">Calendar</a>
-                        </li>
                     </ul>
                 </nav>
                 <button type="button" class="theme-toggle" id="theme-toggle" aria-pressed="false">Dark mode</button>
@@ -499,7 +496,7 @@
               <button type="button" class="btn btn--sm" data-reveal aria-expanded="false" aria-controls="u3-course-ratings" data-hide-text="Hide the course&rsquo;s ratings">Compare with the course&rsquo;s ratings</button>
             </div>
             <div class="reveal-panel" id="u3-course-ratings" hidden>
-              <h4>The course&rsquo;s ratings</h4>
+              <h3>The course&rsquo;s ratings</h3>
               <div class="table-scroll" tabindex="0" role="region" aria-label="The course&rsquo;s ratings (table)">
                 <table>
                   <caption>The course&rsquo;s ratings for the seven California standards</caption>
@@ -522,9 +519,15 @@
         <h2>When you&rsquo;re done</h2>
         <ol>
           <li>Choose <strong>Check my table</strong>. It lists any row still missing a rating, a reason, the part (for a partial rating), or hazards (for a safety flag). When every row is complete, you can compare your ratings with the course&rsquo;s.</li>
-          <li>Score your table with the rubric above: 0, 1, or 2 for each criterion. A 2 in every row of the rubric meets the unit objective.</li>
+          <li>Score your table below: choose 0, 1, or 2 for each criterion. A 2 in every row of the rubric meets the unit objective.</li>
           <li>There is nothing to submit. Your table stays in this browser, and Unit 4 uses it to start your integration plan. Download a copy to keep.</li>
+          <li>Choose <strong>Mark complete</strong> at the bottom of the page. A check mark appears beside Unit Task in the unit menu.</li>
         </ol>
+
+        <section class="selfscore" data-selfscore="unit-3-task" aria-labelledby="u3-score-title">
+          <h3 id="u3-score-title">Score your work</h3>
+          <p>For each row of the rubric, choose the level that matches your table. Your scores stay in this browser.</p>
+        </section>
 
         <dialog class="example-dialog" id="u3-example" aria-labelledby="u3-example-title">
           <div class="example-dialog__inner">
@@ -586,6 +589,7 @@
             </div>
         </footer>
         <script src="assets/js/site.js"></script>
+        <script src="assets/js/selfscore.js"></script>
         <script src="assets/js/activities.js"></script>
         <script src="assets/js/glossary.js"></script>
     </body>

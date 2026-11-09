@@ -19,13 +19,11 @@ Project Milestone 1 — course shell. Unit content in development.
 index.html           Home — title, header image, objectives, unit grid
 introduction.html    Placeholder (Week 2)
 syllabus.html        Placeholder (Week 2)
-calendar.html        Placeholder (Week 2)
 planning-tools.html  Job aids, reachable from any unit
 unit-1.html          Orientation and Goal Setting
 unit-2.html          The AR-Supported Welding Experience
 unit-3.html          Interpreting Simulator Feedback
 unit-4.html          Building an Integration Plan
-style-preview.html   Design system reference — not part of the course
 assets/css/site.css  Design tokens and components
 assets/js/site.js    Nav dropdown and theme toggle
 ```
